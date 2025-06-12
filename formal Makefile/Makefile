@@ -5,40 +5,55 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/11/07 15:19:42 by tat-nguy          #+#    #+#              #
-#    Updated: 2025/06/12 08:53:15 by tat-nguy         ###   ########.fr        #
+#    Created: 2025/06/11 09:03:55 by tat-nguy          #+#    #+#              #
+#    Updated: 2025/06/11 09:21:49 by tat-nguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+# *************** Color Definition **************** #
+
+RED = \033[91m
+YELLOW = \033[33m
+GREEN = \033[92m
+
+# ************************************************* #
 
 NAME = megaphone
 
 # Source Files
-SRCS = megaphone.cpp
+# SRC_DIR 	= src
+# SRC     	= $(wildcard $(SRC_DIR)/*.cpp)
+SRC			= megaphone.cpp
 
 # Object Files
-OBJS = $(SRCS:.cpp=.o)
+OBJS 		= $(SRC:.cpp=.o)
 
-# # Include
-# INCLUDES	= -I includes
-
-# Compiler and Flags
-CC			= c++
-CFLAGS		= -Wall -Wextra -Werror -std=c++98
+# Include and Flags
+INC_DIR		= includes
+INCLUDE 	= -I$(INC_DIR)
+CFLAGS 		= -Wall -Wextra -Werror -std=c++98 -g
+CC 			= c++
 RM			= rm -rf
 
-# Targets
-all:	$(NAME)
+# Target
+all: $(NAME)
 
-$(NAME):	$(OBJS)
-	$(CC) $(CFLAGS) $(INCLUDES) -o $(NAME) $(OBJS)
+$(NAME): $(OBJS)
+	@echo "$(YELLOW)wait for compilation...\n"
+	@$(CC) $(OBJS) -o $(NAME) $(INCLUDE) $(CFLAGS)
+	@echo "$(GREEN)Compiled!\n"
 
 # Clean
 clean:
 	@$(RM) $(OBJS)
-
-fclean:	clean
+	@echo "$(RED)Deleted object files!\n"
+	
+fclean: clean
 	@$(RM) $(NAME)
+	@echo "$(RED)Deleted $(NAME)!\n"
 
 re: fclean all
 
 .PHONY: all clean fclean re
+
+
