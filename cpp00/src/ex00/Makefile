@@ -6,7 +6,7 @@
 #    By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 15:19:42 by tat-nguy          #+#    #+#              #
-#    Updated: 2025/06/12 08:53:15 by tat-nguy         ###   ########.fr        #
+#    Updated: 2025/06/17 21:12:24 by tat-nguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,6 @@ SRCS = megaphone.cpp
 # Object Files
 OBJS = $(SRCS:.cpp=.o)
 
-# # Include
-# INCLUDES	= -I includes
-
 # Compiler and Flags
 CC			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
@@ -30,7 +27,7 @@ RM			= rm -rf
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
-	$(CC) $(CFLAGS) $(INCLUDES) -o $(NAME) $(OBJS)
+	@$(CC) $(CFLAGS) $(INCLUDES) -o $(NAME) $(OBJS)
 
 # Clean
 clean:

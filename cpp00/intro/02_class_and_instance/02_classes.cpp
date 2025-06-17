@@ -1,43 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   02_classes.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/12 09:37:45 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/12 09:37:46 by tat-nguy         ###   ########.fr       */
+/*   Created: 2025/06/17 19:07:20 by tat-nguy          #+#    #+#             */
+/*   Updated: 2025/06/17 19:16:53 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-using namespace std; // make names from std visible without std::
+using namespace std;
 
-int main(int argc, char *argv[])
-{
-	int		i = 1;
-	int 	j;
-	int		len;
-	char 	c;
-
-	if (argc < 2)
-	{
-		cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
-		return (0);
-	}
-	while (i < argc)
-	{
-		len = strlen(argv[i]);
-		j = 0;
-		while (j < len)
-		{
-			c = toupper(argv[i][j]);
-			cout << c;
-			j++;
+class Rectangle {
+	int	width, height;
+	public:
+		void set_values(int, int);
+		int	area() {
+			return width*height;
 		}
-		i++;
-	}
-	cout << "\n";
-	return (0);
+} rect;
+
+void Rectangle::set_values (int x, int y) {
+	width = x;
+	height = y;
+}
+
+int	main () {
+	rect.set_values (3, 4);
+	cout << "area: " << rect.area() << endl;
+	return 0;
 }
