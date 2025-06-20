@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 21:22:27 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/20 02:13:27 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/06/20 10:00:10 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 using namespace std;
 
-class Contact {
+class Contact
+{
 private:
 	int		_index;
 	string	_first_name;
@@ -31,7 +32,6 @@ public:
 	string	getFirst(void) const;
 	void	setFirst(string first);
 
-	
 };
 
 
