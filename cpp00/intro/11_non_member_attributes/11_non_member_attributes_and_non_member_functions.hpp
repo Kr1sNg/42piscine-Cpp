@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*   11_non_member_attributes_and_non_member_fun        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/19 21:22:27 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/21 08:15:51 by tat-nguy         ###   ########.fr       */
+/*   Created: 2025/06/17 18:17:05 by tat-nguy          #+#    #+#             */
+/*   Updated: 2025/06/21 11:42:37 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef	SAMPLE_H
+# define SAMPLE_H
 
-# include <iostream>
-# include <string>
-# include <iomanip>
-# include <sstream>
-# include "Contact.class.hpp"
-
-using namespace std;
-
-class PhoneBook
+class	Sample
 {
-	private:
-		Contact	contacts[8];
-		int		totalContacts;
-	
 	public:
-		PhoneBook(void);
-		~PhoneBook(void);
+		Sample(void);
+		~Sample(void);
+
+		static int	getNbInst(void); //non-member function
 	
-		void	add(const Contact& anew);
-		void	search(void);
-		void	display(int	lengthoflist);
-		
-};
+	private:
+		static int	_nbInst; //non-member attribute
+}
 
 #endif

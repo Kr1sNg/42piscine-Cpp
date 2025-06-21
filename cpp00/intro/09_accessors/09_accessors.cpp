@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 18:16:18 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/19 21:17:46 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/06/20 13:01:56 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	main(void) {
 	instance.setFoo(42);
 	std::cout << "instance.getFoo(): " << instance.getFoo() << std::endl;
 	
-	instance.setFoo(-42);
+	instance.setFoo(-45);
 	std::cout << "instance.getFoo(): " << instance.getFoo() << std::endl;
 
 	return (0);

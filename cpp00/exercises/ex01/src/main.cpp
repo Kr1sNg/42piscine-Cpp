@@ -6,36 +6,47 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 01:04:01 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/20 02:03:12 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/06/21 09:15:28 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
 #include "../includes/Contact.class.hpp"
 #include "../includes/PhoneBook.class.hpp"
 
-using namespace std;
+string	stoupper(string s);
 
 int	main(void)
 {
-	std::string	cmd;
+	string		cmd;
+	PhoneBook	phonebook;
 	
 	while (1)
 	{
-		cout << "Enter the command: ";
-		cin >> cmd;
-		if (cmd == "ADD")
-			cout << "you inserted ADD" << endl;
-		else if (cmd == "SEARCH")
-			cout << "seaching" << endl;
-		else if (cmd == "EXIT")
+		cout << "Choose one command: ADD, SEARCH or EXIT ❇️" << endl;
+		cout << " 👉 Enter the command: ";
+		getline(cin, cmd);
+		if (stoupper(cmd) == "ADD")
 		{
-			cout << "Bye!" << endl;
+			Contact	contact;
+			while (!contact.init())
+			{
+				cout << " ⛔ Field can't be empty!" << endl;
+				cout << "    Please try again! 🔫" << endl;
+			}
+			phonebook.add(contact);
+			cout << endl;
+		}
+		else if (stoupper(cmd) == "SEARCH")
+		{
+			phonebook.search();
+			cout << endl;
+		}
+		else if (stoupper(cmd) == "EXIT")
+		{
+			cout << "\t     🫰 Goodbye!" << endl;
+			cout << "\t 😍 Have a nice day! 😍 " << endl;
 			break ;
 		}
-		else
-			cout << "Wrong command" << endl;
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/11 09:03:55 by tat-nguy          #+#    #+#              #
-#    Updated: 2025/06/11 09:21:49 by tat-nguy         ###   ########.fr        #
+#    Updated: 2025/06/21 10:25:26 by tat-nguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,19 +18,16 @@ GREEN = \033[92m
 
 # ************************************************* #
 
-NAME = megaphone
+NAME = account
 
 # Source Files
-# SRC_DIR 	= src
-# SRC     	= $(wildcard $(SRC_DIR)/*.cpp)
-SRC			= megaphone.cpp
+SRC			= Account.cpp tests.cpp
 
 # Object Files
 OBJS 		= $(SRC:.cpp=.o)
 
 # Include and Flags
-INC_DIR		= includes
-INCLUDE 	= -I$(INC_DIR)
+INCLUDE 	= Account.hpp
 CFLAGS 		= -Wall -Wextra -Werror -std=c++98 -g
 CC 			= c++
 RM			= rm -rf

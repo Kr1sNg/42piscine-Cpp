@@ -1,16 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01-namespace.cpp                                   :+:      :+:    :+:   */
+/*   00_namespace.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 16:06:47 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/17 16:06:48 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/06/21 00:08:23 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <iostream>     // std::cout, std::endl
+#include <iomanip>      // std::setw
+
 
 int	gl_var = 1;
 
@@ -63,6 +66,7 @@ int	main(void)
 	printf("::gl_var:	[%d]\n",::gl_var);
 	printf("::f():		[%d]\n",::f());
 
+	std::cout << std::setw(10) << "char...." << std::endl;
 	return (0);
 }
 

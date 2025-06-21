@@ -6,11 +6,11 @@
 #    By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 15:19:42 by tat-nguy          #+#    #+#              #
-#    Updated: 2025/06/20 01:46:42 by tat-nguy         ###   ########.fr        #
+#    Updated: 2025/06/20 19:58:49 by tat-nguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = MyPhoneBook
+NAME = PhoneBook
 
 # Source Files
 SRC_DIR 	= src

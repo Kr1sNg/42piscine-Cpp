@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*   helper.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/19 21:22:27 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/21 08:15:51 by tat-nguy         ###   ########.fr       */
+/*   Created: 2025/06/21 00:09:08 by tat-nguy          #+#    #+#             */
+/*   Updated: 2025/06/21 09:08:19 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
-
-# include <iostream>
-# include <string>
-# include <iomanip>
-# include <sstream>
-# include "Contact.class.hpp"
+#include <iostream>
+#include <string>
 
 using namespace std;
 
-class PhoneBook
+string	formatField(const string& field)
 {
-	private:
-		Contact	contacts[8];
-		int		totalContacts;
-	
-	public:
-		PhoneBook(void);
-		~PhoneBook(void);
-	
-		void	add(const Contact& anew);
-		void	search(void);
-		void	display(int	lengthoflist);
-		
-};
+	if (field.size() > 10)
+		return (field.substr(0, 9) + ".");
+	else
+		return (string(10 - field.size(), ' ') + field);
+}
 
-#endif
+string	stoupper(string s)
+{
+	int	i = -1;
+	
+	while (++i < s.size())
+		s[i] = toupper(s[i]);
+	return (s);	
+}
