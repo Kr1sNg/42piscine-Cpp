@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/21 00:09:08 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/21 09:08:19 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/06/22 08:36:43 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ string	formatField(const string& field)
 
 string	stoupper(string s)
 {
-	int	i = -1;
+	unsigned int	i = -1;
 	
 	while (++i < s.size())
 		s[i] = toupper(s[i]);

@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 21:22:27 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/21 09:10:37 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/06/22 10:38:20 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@
 # include <iostream>
 # include <string>
 # include <iomanip>
+# include <cstdlib>
 
 using namespace std;
-
-string	formatField(const string& field);
 
 class Contact
 {
@@ -34,24 +33,24 @@ class Contact
 		Contact(void);
 		~Contact(void);
 	
+		string	setInfo(string msg);
 		bool	init(void);
 	
 		string	getFirst(void) const;
-		bool	setFirst(string first);
+		bool	setFirst(const string& first);
 
 		string	getLast(void) const;
-		bool	setLast(string last);
+		bool	setLast(const string& last);
 	
 		string	getNick(void) const;
-		bool	setNick(string nick);
+		bool	setNick(const string& nick);
 
 		string	getNbr(void) const;
-		bool	setNbr(string nbr);
+		bool	setNbr(const string& nbr);
 
 		string	getSecret(void) const;
-		bool	setSecret(string secret);
+		bool	setSecret(const string& secret);
 
-		void	display(int index) const;
 		void	displayFull(void) const;
 
 };

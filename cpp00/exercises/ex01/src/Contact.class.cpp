@@ -6,13 +6,14 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 21:22:27 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/21 09:09:00 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/06/22 10:39:06 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Contact.class.hpp"
 
-Contact::Contact(void)
+Contact::Contact(void): _first(""), _last(""), _nick(""),
+						_nbr(""), _secret("")
 {
 	return ;
 }
@@ -27,7 +28,7 @@ string	Contact::getFirst(void) const
 	return (this->_first);
 }
 
-bool	Contact::setFirst(string first)
+bool	Contact::setFirst(const string& first)
 {
 	if (first.size() > 0)
 		return (this->_first = first, true);
@@ -40,7 +41,7 @@ string	Contact::getLast(void) const
 	return (this->_last);
 }
 
-bool	Contact::setLast(string last)
+bool	Contact::setLast(const string& last)
 {
 	if (last.size() > 0)
 		return (this->_last = last, true);
@@ -53,7 +54,7 @@ string	Contact::getNick(void) const
 	return (this->_nick);
 }
 
-bool	Contact::setNick(string nick)
+bool	Contact::setNick(const string& nick)
 {
 	if (nick.size() > 0)
 		return (this->_nick = nick, true);
@@ -66,7 +67,7 @@ string	Contact::getNbr(void) const
 	return (this->_nbr);
 }
 
-bool	Contact::setNbr(string nbr)
+bool	Contact::setNbr(const string& nbr)
 {
 	if (nbr.size() > 0)
 		return (this->_nbr = nbr, true);
@@ -79,7 +80,7 @@ string	Contact::getSecret(void) const
 	return (this->_secret);
 }
 
-bool	Contact::setSecret(string secret)
+bool	Contact::setSecret(const string& secret)
 {
 	if (secret.size() > 0)
 		return (this->_secret = secret, true);
@@ -87,44 +88,47 @@ bool	Contact::setSecret(string secret)
 		return (false);
 }
 
+string	Contact::setInfo(string msg)
+{
+	string	input = "";
+
+	while (!input.size())
+	{
+		cout << msg;
+		getline(cin, input);
+		if (cin.eof())
+		{
+			cout << "EOF detected. Exiting..." << endl;
+			break ;
+		}
+		if (!input.size())
+		{
+			cout << " ⛔ Field can't be empty!" << endl;
+			cout << "    Please try again! 🔫" << endl;
+		}
+	}
+	return (input);
+}
+
+
 bool	Contact::init(void)
 {
-	string	input;
-	
-	cout << "\t 👨 First name: ";
-	getline (cin, input);
-	if (!setFirst(input))
+	if (!setFirst(setInfo("\t 👨 First name: ")))
 		return (false);
 
-	cout << "\t 👨 Last name: ";
-	getline (cin, input);
-	if (!setLast(input))
+	if (!setLast(setInfo("\t 👨 Last name: ")))
 		return (false);
 	
-	cout << "\t 👨 Nickname: ";
-	getline (cin, input);
-	if (!setNick(input))
+	if (!setNick(setInfo("\t 👨 Nickname: ")))
 		return (false);
 	
-	cout << "\t 📱 Phone number: ";
-	getline (cin, input);
-	if (!setNbr(input))
+	if (!setNbr(setInfo("\t 📱 Phone number: ")))
 		return (false);
 
-	cout << "\t 👄 Darkest secret: ";
-	getline (cin, input);
-	if (!setSecret(input))
+	if (!setSecret(setInfo("\t 👄 Darkest secret: ")))
 		return (false);
 	
 	return (true);
-}
-
-void	Contact::display(int index) const
-{
-	cout << "|" << setw(10) << index << "|"
-		 << formatField(getFirst()) << "|"
-		 << formatField(getLast()) << "|"
-		 << formatField(getNick()) << "|" << endl;		 
 }
 
 void	Contact::displayFull(void) const

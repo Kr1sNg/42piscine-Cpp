@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 01:04:01 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/21 09:15:28 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/06/22 10:35:38 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ int	main(void)
 		cout << "Choose one command: ADD, SEARCH or EXIT ❇️" << endl;
 		cout << " 👉 Enter the command: ";
 		getline(cin, cmd);
+		if (cin.eof())
+		{
+			cout << "EOF detected. Exiting..." << endl;
+			break;
+		}
 		if (stoupper(cmd) == "ADD")
 		{
-			Contact	contact;
-			while (!contact.init())
-			{
-				cout << " ⛔ Field can't be empty!" << endl;
-				cout << "    Please try again! 🔫" << endl;
-			}
-			phonebook.add(contact);
+			if (!phonebook.add())
+				exit(1);
 			cout << endl;
 		}
 		else if (stoupper(cmd) == "SEARCH")
@@ -47,6 +47,8 @@ int	main(void)
 			cout << "\t 😍 Have a nice day! 😍 " << endl;
 			break ;
 		}
+		else
+			cout << "Try again." << endl;
 	}
 	return (0);
 }

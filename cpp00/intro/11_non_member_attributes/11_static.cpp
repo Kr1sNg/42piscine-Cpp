@@ -1,39 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   11_non_member_attributes_and_non_member_fun        :+:      :+:    :+:   */
+/*   11_main.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 18:17:05 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/21 21:32:38 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/06/21 21:38:44 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "11_non_member_attributes_and_non_member_functions.hpp"
 
-Sample::Sample(void)
+void	f0(void)
 {
-	std::cout << "Constructor called" << std::endl;
-	Sample::_nbInst += 1;
+	Sample instance;
+
+	std::cout << "Number of instances: " << Sample::getNbInst() << std::endl;
 
 	return ;
 }
 
-Sample::~Sample(void)
+
+void	f1(void)
 {
-	std::cout << "Destructor called" << std::endl;
-	Sample::_nbInst -= 1;
+	Sample instance;
+
+	std::cout << "Number of instances: " << Sample::getNbInst() << std::endl;
+	f0();
 
 	return ;
 }
 
-int	Sample::getNbInst(void)
+int	main(void)
 {
-	return (Sample::_nbInst); //return non-member attribute of class
+	std::cout << "Number of instances: " << Sample::getNbInst() << std::endl;
+	f1();
+	std::cout << "Number of instances: " << Sample::getNbInst() << std::endl;
+
+	return (0);
 }
-
-int	Sample::_nbInst = 0; // init non-member attribute
-
-
