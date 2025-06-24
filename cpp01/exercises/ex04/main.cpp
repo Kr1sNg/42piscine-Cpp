@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/24 11:17:31 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/24 18:44:08 by tat-nguy         ###   ########.fr       */
+/*   Created: 2025/06/24 20:22:29 by tat-nguy          #+#    #+#             */
+/*   Updated: 2025/06/24 20:35:22 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _WEAPON_HPP_
-# define _WEAPON_HPP_
+#include <string> //except "replace"
+#include <iostream>
 
-# include <iostream>
-# include <string>
-
-class Weapon
+int	main(int ac, char**av)
 {
-	private:
-		std::string	_type;
-		
-	public:
-		Weapon(const std::string &weapon);
-		~Weapon(void);
+	if (ac != 4)
+	{
+		std::cout << "Usage: " << av[0] << " filename string_1 string_2" << std::endl;
+		return (1);
+	}
 	
-		const 	std::string &getType(void) const;
-		void	setType(const std::string &newType);
-
-};
-
-#endif
+	std::ifstream( av[1] );
+	
+	
+}

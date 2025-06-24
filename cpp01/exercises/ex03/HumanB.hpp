@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 11:18:56 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/24 16:13:13 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/06/24 19:08:08 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,23 @@
 # include <string>
 # include "Weapon.hpp"
 
+// bcs we aren't sure that B have a weapon or not, so we can't use reference!
+// as reference is used only for exist variable, can't be NULL
+// and bcz weapon will change after, so we have to use pointer to follow THIS weapon
+// (not only a copy of it)
+
 class HumanB
 {
 	private:
-		std::string	name;
-		Weapon		weapon;
+		std::string	_name;
+		Weapon		*_weapon;
 		
 	public:
-		HumanB(std::tring const &n, Weapon type);
+		HumanB(std::string const &n);
 		~HumanB(void);
 		
 		void	attack(void);
+		void	setWeapon(Weapon &wp);
 };
-
-HumanB::HumanB(/* args */)
-{
-}
-
-HumanB::~HumanB()
-{
-}
-
-
 
 #endif
