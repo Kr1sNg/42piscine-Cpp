@@ -6,7 +6,7 @@
 #    By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 15:19:42 by tat-nguy          #+#    #+#              #
-#    Updated: 2025/06/24 11:23:17 by tat-nguy         ###   ########.fr        #
+#    Updated: 2025/06/24 15:28:53 by tat-nguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,6 @@ SRCS     	= $(wildcard *.cpp)
 
 # Object Files
 OBJS = $(SRCS:.cpp=.o)
-
-# Include
-INCLUDES	= -I includes
 
 # Compiler and Flags
 CXX			= c++

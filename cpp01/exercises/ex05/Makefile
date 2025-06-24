@@ -6,7 +6,7 @@
 #    By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 15:19:42 by tat-nguy          #+#    #+#              #
-#    Updated: 2025/06/23 21:50:37 by tat-nguy         ###   ########.fr        #
+#    Updated: 2025/06/24 15:29:14 by tat-nguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,9 +28,6 @@ SRCS     	= $(wildcard $(SRC_DIR)/*.cpp)
 # Object Files
 OBJS = $(SRCS:.cpp=.o)
 
-# Include
-INCLUDES	= -I includes
-
 # Compiler and Flags
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
@@ -44,7 +41,7 @@ all:	$(NAME)
 
 $(NAME):	$(OBJS)
 	@echo "$(YELLOW) 🛠️  waiting for compilation...$(RESET)"
-	@$(CXX) $(CXXFLAGS) $(INCLUDES) -o $(NAME) $(OBJS)
+	@$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 	@echo "$(GREEN) 🤖  Compiled successful ✴️  $(NAME) ✴️$(RESET)"
 
 # Clean
