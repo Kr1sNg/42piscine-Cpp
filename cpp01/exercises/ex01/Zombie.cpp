@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 21:58:04 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/23 22:25:44 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/06/24 10:35:40 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	Zombie::announce( void )
 	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-Zombie::Zombie( void ): name("")
+Zombie::Zombie( void )
 {
 	return ;
 }

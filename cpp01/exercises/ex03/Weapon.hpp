@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/23 21:57:49 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/24 10:36:11 by tat-nguy         ###   ########.fr       */
+/*   Created: 2025/06/24 11:17:31 by tat-nguy          #+#    #+#             */
+/*   Updated: 2025/06/24 11:50:09 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ZOMBIEZ_HPP_
-# define _ZOMBIEZ_HPP_
-
-#include <string>
 #include <iostream>
+#include <string>
 
-class Zombie
+class Weapon
 {
-	private:
-		std::string	name;
-	public:
-		Zombie( std::string s );
-		~Zombie( void );
-		
-		void	setName( std::string n );
-		void	announce( void );
-		
-		Zombie( void );
+private:
+	std::string	type;
+public:
+	Weapon(std::string const &weapon);
+	~Weapon();
+	
+	std::string const &getType(void) const;
+	void	setType(std::string const &newType);
 };
-
-
-#endif

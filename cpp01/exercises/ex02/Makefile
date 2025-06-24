@@ -6,7 +6,7 @@
 #    By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 15:19:42 by tat-nguy          #+#    #+#              #
-#    Updated: 2025/06/23 21:50:37 by tat-nguy         ###   ########.fr        #
+#    Updated: 2025/06/24 10:58:12 by tat-nguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,17 +19,13 @@ RESET = \033[0m
 
 # **************************** #
 
-NAME = PhoneBook
+NAME = Brain
 
 # Source Files
-SRC_DIR 	= src
-SRCS     	= $(wildcard $(SRC_DIR)/*.cpp)
+SRCS     	= main.cpp
 
 # Object Files
 OBJS = $(SRCS:.cpp=.o)
-
-# Include
-INCLUDES	= -I includes
 
 # Compiler and Flags
 CXX			= c++
@@ -44,7 +40,7 @@ all:	$(NAME)
 
 $(NAME):	$(OBJS)
 	@echo "$(YELLOW) 🛠️  waiting for compilation...$(RESET)"
-	@$(CXX) $(CXXFLAGS) $(INCLUDES) -o $(NAME) $(OBJS)
+	@$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 	@echo "$(GREEN) 🤖  Compiled successful ✴️  $(NAME) ✴️$(RESET)"
 
 # Clean

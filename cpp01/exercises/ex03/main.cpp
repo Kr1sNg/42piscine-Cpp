@@ -5,24 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/23 12:27:19 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/24 10:46:58 by tat-nguy         ###   ########.fr       */
+/*   Created: 2025/06/24 11:17:03 by tat-nguy          #+#    #+#             */
+/*   Updated: 2025/06/24 11:28:42 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.h"
-#include "Zombie.hpp"
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int	main(void)
 {
-	std::cout << "--- Random Chump (stack allocation) ---" << std::endl;
-	randomChump("Stacky");
-	
-	std::cout << "\n--- New Zombie (heap allocation) ---" << std::endl;
-	Zombie *nZ = newZombie("Heapy");
-	nZ->announce();
-
-	delete (nZ);
+	{
+		Weapon	club = Weapon("crude spiked club");
+		HumanA	bob("Bob", club);
+		
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon	club = Weapon("crude spiked club");
+		HumanB	jim("Jim");
+		
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 	return (0);
 }
-

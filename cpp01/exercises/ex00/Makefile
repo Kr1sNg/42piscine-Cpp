@@ -6,7 +6,7 @@
 #    By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 15:19:42 by tat-nguy          #+#    #+#              #
-#    Updated: 2025/06/23 21:53:49 by tat-nguy         ###   ########.fr        #
+#    Updated: 2025/06/23 22:41:35 by tat-nguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ all:	$(NAME)
 
 $(NAME):	$(OBJS)
 	@echo "$(YELLOW) 🛠️  waiting for compilation...$(RESET)"
-	@$(CXX) $(CXXFLAGS) $(INCLUDES) -o $(NAME) $(OBJS)
+	@$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 	@echo "$(GREEN) 🤖  Compiled successful ✴️  $(NAME) ✴️$(RESET)"
 
 # Clean

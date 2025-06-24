@@ -1,27 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tat-nguy <tat-nguy@student.42perpignan.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/23 21:58:24 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/24 10:40:22 by tat-nguy         ###   ########.fr       */
+/*   Created: 2025/06/24 11:18:29 by tat-nguy          #+#    #+#             */
+/*   Updated: 2025/06/24 11:18:31 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
 
-Zombie	*zombieHorde( int N, std::string name )
-{
-	if (N <= 0)
-		return (nullptr);
-
-	Zombie	*horde = new Zombie[N];
-
-	for (int i = 0; i < N; i++)
-	{
-		horde[i].setName(name + "-" + std::to_string(i));
-	}
-	return (horde);
-}
