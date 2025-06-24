@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 21:22:27 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/22 10:39:06 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/06/24 17:07:24 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ Contact::~Contact(void)
 	return ;
 }
 
-string	Contact::getFirst(void) const
+std::string	Contact::getFirst(void) const
 {
 	return (this->_first);
 }
 
-bool	Contact::setFirst(const string& first)
+bool	Contact::setFirst(const std::string& first)
 {
 	if (first.size() > 0)
 		return (this->_first = first, true);
@@ -36,12 +36,12 @@ bool	Contact::setFirst(const string& first)
 		return (false);
 }
 
-string	Contact::getLast(void) const
+std::string	Contact::getLast(void) const
 {
 	return (this->_last);
 }
 
-bool	Contact::setLast(const string& last)
+bool	Contact::setLast(const std::string& last)
 {
 	if (last.size() > 0)
 		return (this->_last = last, true);
@@ -49,12 +49,12 @@ bool	Contact::setLast(const string& last)
 		return (false);
 }
 
-string	Contact::getNick(void) const
+std::string	Contact::getNick(void) const
 {
 	return (this->_nick);
 }
 
-bool	Contact::setNick(const string& nick)
+bool	Contact::setNick(const std::string& nick)
 {
 	if (nick.size() > 0)
 		return (this->_nick = nick, true);
@@ -62,12 +62,12 @@ bool	Contact::setNick(const string& nick)
 		return (false);
 }
 
-string	Contact::getNbr(void) const
+std::string	Contact::getNbr(void) const
 {
 	return (this->_nbr);
 }
 
-bool	Contact::setNbr(const string& nbr)
+bool	Contact::setNbr(const std::string& nbr)
 {
 	if (nbr.size() > 0)
 		return (this->_nbr = nbr, true);
@@ -75,12 +75,12 @@ bool	Contact::setNbr(const string& nbr)
 		return (false);
 }
 
-string	Contact::getSecret(void) const
+std::string	Contact::getSecret(void) const
 {
 	return (this->_secret);
 }
 
-bool	Contact::setSecret(const string& secret)
+bool	Contact::setSecret(const std::string& secret)
 {
 	if (secret.size() > 0)
 		return (this->_secret = secret, true);
@@ -88,23 +88,23 @@ bool	Contact::setSecret(const string& secret)
 		return (false);
 }
 
-string	Contact::setInfo(string msg)
+std::string	Contact::setInfo(std::string msg)
 {
-	string	input = "";
+	std::string	input = "";
 
 	while (!input.size())
 	{
-		cout << msg;
-		getline(cin, input);
-		if (cin.eof())
+		std::cout << msg;
+		std::getline(std::cin, input);
+		if (std::cin.eof())
 		{
-			cout << "EOF detected. Exiting..." << endl;
+			std::cout << "EOF detected. Exiting..." << std::endl;
 			break ;
 		}
 		if (!input.size())
 		{
-			cout << " ⛔ Field can't be empty!" << endl;
-			cout << "    Please try again! 🔫" << endl;
+			std::cout << " ⛔ Field can't be empty!" << std::endl;
+			std::cout << "    Please try again! 🔫" << std::endl;
 		}
 	}
 	return (input);
@@ -133,10 +133,10 @@ bool	Contact::init(void)
 
 void	Contact::displayFull(void) const
 {
-	cout << "\t🪪 Contact Information 🪪" << endl;
-	cout << setw(20) << "First Name: " << getFirst() << endl;
-	cout << setw(20) << "Last Name: " << getLast() << endl;
-	cout << setw(20) << "Nickname: " << getNick() << endl;
-	cout << setw(20) << "Phone Number: " << getNbr() << endl;
-	cout << setw(20) << "Darkest Secret: " << getSecret() << endl;
+	std::cout << "\t🪪 Contact Information 🪪" << std::endl;
+	std::cout << std::setw(20) << "First Name: " << getFirst() << std::endl;
+	std::cout << std::setw(20) << "Last Name: " << getLast() << std::endl;
+	std::cout << std::setw(20) << "Nickname: " << getNick() << std::endl;
+	std::cout << std::setw(20) << "Phone Number: " << getNbr() << std::endl;
+	std::cout << std::setw(20) << "Darkest Secret: " << getSecret() << std::endl;
 }

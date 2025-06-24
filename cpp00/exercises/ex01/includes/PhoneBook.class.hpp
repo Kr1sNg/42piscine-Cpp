@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 21:22:27 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/22 10:38:12 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/06/24 17:04:43 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@
 # include <cstdlib>
 # include "Contact.class.hpp"
 
-using namespace std;
-
-string	formatField(const string& field);
+std::string	formatField(const std::string& field);
 
 class PhoneBook
 {

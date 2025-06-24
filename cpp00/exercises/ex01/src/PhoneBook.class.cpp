@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 21:22:27 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/22 10:34:31 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/06/24 17:11:08 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ bool	PhoneBook::add(void)
 	if (!contacts[index].init())
 		return (false);
 	_totalContacts++;
-	cout << " ✅ New contact added at index " << index << endl;
+	std::cout << " ✅ New contact added at index " << index << std::endl;
 
 	return (true);
 }
@@ -40,12 +40,12 @@ bool	PhoneBook::add(void)
 void	PhoneBook::search(void)
 {
 	int				count;
-	string			cmd;
+	std::string		cmd;
 	int				nbr;
 
 	if (_totalContacts <= 0)
 	{
-		cout << "\t 🪪 Empty Phone Book!" << endl;
+		std::cout << "\t 🪪 Empty Phone Book!" << std::endl;
 		return ;
 	}
 	if (_totalContacts < 8)
@@ -55,20 +55,20 @@ void	PhoneBook::search(void)
 	display(count);
 	while (1)
 	{
-		cout << " 👉 Enter the index: ";
-		getline(cin, cmd);
-		if (cin.eof())
+		std::cout << " 👉 Enter the index: ";
+		std::getline(std::cin, cmd);
+		if (std::cin.eof())
 		{
-			cout << "EOF detected. Exiting..." << endl;
+			std::cout << "EOF detected. Exiting..." << std::endl;
 			exit(1);
 		}
 		
 		// convert string to int
-		istringstream	iss(cmd);
+		std::istringstream	iss(cmd);
 		if ((iss >> nbr) && nbr >= 0 && nbr < count)
 			break ;
 		else
-			cout << " ⛔ Out of range. Please try again!" << endl;
+			std::cout << " ⛔ Out of range. Please try again!" << std::endl;
 	}
 	contacts[nbr].displayFull();
 	
@@ -77,20 +77,20 @@ void	PhoneBook::search(void)
 
 void	PhoneBook::_contactline(const Contact contact, int index) const
 {
-	cout << "|" << setw(10) << index << "|"
+	std::cout << "|" << std::setw(10) << index << "|"
 		 << formatField(contact.getFirst()) << "|"
 		 << formatField(contact.getLast()) << "|"
-		 << formatField(contact.getNick()) << "|" << endl;		 
+		 << formatField(contact.getNick()) << "|" << std::endl;		 
 }
 
 void	PhoneBook::display(int lengthoflist)
 {
 	int	i = -1;
 	
-	cout << "|" << setw(10) << "Index" << "|"
-		 << setw(10) << "First Name" << "|"
-		 << setw(10) << "Last Name" << "|"
-		 << setw(10) << "Nickame" << "|" << endl;
+	std::cout << "|" << std::setw(10) << "Index" << "|"
+		 << std::setw(10) << "First Name" << "|"
+		 << std::setw(10) << "Last Name" << "|"
+		 << std::setw(10) << "Nickame" << "|" << std::endl;
 
 	while (++i < lengthoflist)
 		_contactline(contacts[i], i);

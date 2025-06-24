@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 21:22:27 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/22 10:38:20 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/06/24 17:04:27 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,40 +18,38 @@
 # include <iomanip>
 # include <cstdlib>
 
-using namespace std;
-
 class Contact
 {
 	private:
-		string	_first;
-		string	_last;
-		string	_nick;
-		string	_nbr;
-		string	_secret;
+		std::string	_first;
+		std::string	_last;
+		std::string	_nick;
+		std::string	_nbr;
+		std::string	_secret;
 
 	public:
 		Contact(void);
 		~Contact(void);
 	
-		string	setInfo(string msg);
-		bool	init(void);
+		std::string	setInfo(std::string msg);
+		bool		init(void);
 	
-		string	getFirst(void) const;
-		bool	setFirst(const string& first);
+		std::string	getFirst(void) const;
+		bool		setFirst(const std::string& first);
 
-		string	getLast(void) const;
-		bool	setLast(const string& last);
+		std::string	getLast(void) const;
+		bool		setLast(const std::string& last);
 	
-		string	getNick(void) const;
-		bool	setNick(const string& nick);
+		std::string	getNick(void) const;
+		bool		setNick(const std::string& nick);
 
-		string	getNbr(void) const;
-		bool	setNbr(const string& nbr);
+		std::string	getNbr(void) const;
+		bool		setNbr(const std::string& nbr);
 
-		string	getSecret(void) const;
-		bool	setSecret(const string& secret);
+		std::string	getSecret(void) const;
+		bool		setSecret(const std::string& secret);
 
-		void	displayFull(void) const;
+		void		displayFull(void) const;
 
 };
 

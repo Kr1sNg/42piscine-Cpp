@@ -6,49 +6,49 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 01:04:01 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/22 10:35:38 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/06/24 17:09:27 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Contact.class.hpp"
 #include "../includes/PhoneBook.class.hpp"
 
-string	stoupper(string s);
+std::string	stoupper(std::string s);
 
 int	main(void)
 {
-	string		cmd;
+	std::string		cmd;
 	PhoneBook	phonebook;
 	
 	while (1)
 	{
-		cout << "Choose one command: ADD, SEARCH or EXIT ❇️" << endl;
-		cout << " 👉 Enter the command: ";
-		getline(cin, cmd);
-		if (cin.eof())
+		std::cout << "Choose one command: ADD, SEARCH or EXIT ❇️" << std::endl;
+		std::cout << " 👉 Enter the command: ";
+		std::getline(std::cin, cmd);
+		if (std::cin.eof())
 		{
-			cout << "EOF detected. Exiting..." << endl;
+			std::cout << "EOF detected. Exiting..." << std::endl;
 			break;
 		}
 		if (stoupper(cmd) == "ADD")
 		{
 			if (!phonebook.add())
 				exit(1);
-			cout << endl;
+			std::cout << std::endl;
 		}
 		else if (stoupper(cmd) == "SEARCH")
 		{
 			phonebook.search();
-			cout << endl;
+			std::cout << std::endl;
 		}
 		else if (stoupper(cmd) == "EXIT")
 		{
-			cout << "\t     🫰 Goodbye!" << endl;
-			cout << "\t 😍 Have a nice day! 😍 " << endl;
+			std::cout << "\t     🫰 Goodbye!" << std::endl;
+			std::cout << "\t 😍 Have a nice day! 😍 " << std::endl;
 			break ;
 		}
 		else
-			cout << "Try again." << endl;
+			std::cout << "Try again." << std::endl;
 	}
 	return (0);
 }
