@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 20:22:29 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/25 12:29:44 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/06/25 15:14:34 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,15 @@ int	main(int ac, char**av)
 		std::cerr << "Can't open file " << av[1] << std::endl;
 		return (1);
 	}
+	else
+	{
+		std::string	line;
+		while (std::getline(ifs, line))
+		{
+			
+		}
+	}
 	
-	std::string	line = ifs.getline(cin, )
 	
 }
 
