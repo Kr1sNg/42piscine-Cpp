@@ -6,11 +6,11 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 21:55:09 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/25 09:49:58 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/06/25 09:58:39 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Read a text file and outputs it in pages (80 characters per line && 20 lines per page)
+// Read a text file and outputs it in pages
 
 #include <iostream>
 #include <fstream>

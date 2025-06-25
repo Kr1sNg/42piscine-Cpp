@@ -6,9 +6,17 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 19:45:20 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/23 20:04:34 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/06/25 10:52:40 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// get : for char
+// cin : for word (before space)
+// getline : for a line (until \n)
+
+// put : for char
+// cout : for formatted output
+
 
 #include <iostream>
 #include <fstream>

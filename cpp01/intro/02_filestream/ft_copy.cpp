@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 23:22:04 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/25 09:38:15 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/06/25 10:50:26 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_copy(std::istream &is, std::ostream &os)
 {
 	char	c;
 	
-	while (is.get(c))
+	while (is.get(c)) // get is used for character
 		os.put(c);
 }
 

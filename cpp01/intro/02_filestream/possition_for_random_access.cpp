@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   possition_for_random_access.cpp                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/23 21:57:34 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/25 10:31:01 by tat-nguy         ###   ########.fr       */
+/*   Created: 2025/06/25 11:24:48 by tat-nguy          #+#    #+#             */
+/*   Updated: 2025/06/25 11:27:35 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include "Zombie.h"
+#include <fstream>
+#include <iostream>
 
-int	main(void)
+class IndexEntry
 {
-	Zombie	*zhorde = zombieHorde( 8, "ZombieHeapie" );
+	private:
+		long	key;
+		long	recNr;
+		
+	public:
+		IndexEntry(/* args */);
+	~IndexEntry();
+};
 
-	if (!zhorde)
-	{
-		std::cerr << "Can't allocate memory" << std::endl;
-		return (1);
-	}
-	for (int i = 0; i < 8; i++)
-	{
-		zhorde[i].announce();
-	}
-	delete [] zhorde;
-	return (0);
+IndexEntry::IndexEntry(/* args */)
+{
+}
+
+IndexEntry::~IndexEntry()
+{
 }

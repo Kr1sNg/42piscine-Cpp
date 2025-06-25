@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   string_find_replace.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/23 21:57:34 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/25 10:31:01 by tat-nguy         ###   ########.fr       */
+/*   Created: 2025/06/25 11:51:45 by tat-nguy          #+#    #+#             */
+/*   Updated: 2025/06/25 12:09:39 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include "Zombie.h"
+#include <string>
+#include <iostream>
 
 int	main(void)
 {
-	Zombie	*zhorde = zombieHorde( 8, "ZombieHeapie" );
+	std::string	s1("There they go again!"),
+				s2("Bob and Bill");
+	int			pos = s1.find("they");
+	
+	std::cout << "before: " << s1 << std::endl;
+	
+	if (pos != std::string::npos) // npos = no position
+		s1.replace(pos, 4, s2); // position, length of substr, new substring
 
-	if (!zhorde)
-	{
-		std::cerr << "Can't allocate memory" << std::endl;
-		return (1);
-	}
-	for (int i = 0; i < 8; i++)
-	{
-		zhorde[i].announce();
-	}
-	delete [] zhorde;
+	std::cout << "after: " << s1 << std::endl;
+	
 	return (0);
 }
