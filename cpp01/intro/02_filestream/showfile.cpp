@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 21:55:09 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/24 22:09:37 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/06/25 09:49:58 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,16 @@ int	main(int ac, char **av)
 		return (2);
 	}
 	
-	char	line[80];
+	int		size = 800;
+	int		len = 20;
+	char	buffer[size];
 	int		cnt = 0;
 
 	// copy the file to standar output
-	while (file.getline(line, 80))
+	while (file.getline(buffer, size))
 	{
-		std::cout << line << std::endl;
-		if (++cnt == 20)
+		std::cout << buffer << std::endl;
+		if (++cnt == len)
 		{
 			cnt = 0;
 			std::cout << "\n\t ---- <return> to continue --- " << std::endl;
