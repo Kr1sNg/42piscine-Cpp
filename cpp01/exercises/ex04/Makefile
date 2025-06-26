@@ -6,7 +6,7 @@
 #    By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 15:19:42 by tat-nguy          #+#    #+#              #
-#    Updated: 2025/06/24 20:25:36 by tat-nguy         ###   ########.fr        #
+#    Updated: 2025/06/25 19:40:29 by tat-nguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,7 @@ RESET = \033[0m
 NAME = Losers
 
 # Source Files
-SRC_DIR 	= src
-SRCS     	= $(wildcard $(SRC_DIR)/*.cpp)
+SRCS     	= main.cpp
 
 # Object Files
 OBJS = $(SRCS:.cpp=.o)

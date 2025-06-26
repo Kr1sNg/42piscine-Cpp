@@ -6,7 +6,7 @@
 #    By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 15:19:42 by tat-nguy          #+#    #+#              #
-#    Updated: 2025/06/24 15:29:25 by tat-nguy         ###   ########.fr        #
+#    Updated: 2025/06/26 16:04:32 by tat-nguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,10 @@ RESET = \033[0m
 
 # **************************** #
 
-NAME = PhoneBook
+NAME = harlFilter
 
 # Source Files
-SRC_DIR 	= src
-SRCS     	= $(wildcard $(SRC_DIR)/*.cpp)
+SRCS     	= $(wildcard *.cpp)
 
 # Object Files
 OBJS = $(SRCS:.cpp=.o)
@@ -54,5 +53,12 @@ fclean:	clean
 	@echo "$(RED) 🚽  Deleted ❄️  $(NAME) ❄️$(RESET)"
 
 re: fclean all
+
+# Debug & Memory leaks (iOs)
+ASANFLAGS = -fsanitize=address -g
+asan: 
+	$(CXX) $(CXXFLAGS) $(ASANFLAGS) -o $(NAME) $(SRCS)
+asclean: fclean
+	find . -name "*.dSYM" -type d -exec $(RM) {} +
 
 .PHONY: all clean fclean re

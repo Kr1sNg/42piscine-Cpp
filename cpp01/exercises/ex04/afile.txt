@@ -1,0 +1,5 @@
+std::string(av[2]) turns the C-string into a C++ string
+
++ ".replace" appends the .replace suffix correctly
+
+The full result is a valid filename string passed to std::ofstream

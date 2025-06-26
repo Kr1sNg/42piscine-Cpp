@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   string_find_replace.cpp                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 11:51:45 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/25 17:40:55 by tat-nguy         ###   ########.fr       */
+/*   Created: 2025/06/26 15:14:06 by tat-nguy          #+#    #+#             */
+/*   Updated: 2025/06/26 17:22:28 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
+#include "Harl.hpp"
 
-int	main(void)
+int	main(int ac, char **av)
 {
-	std::string	s1("There they go again!"),
-				s2("Bob and Bill");
-	int			pos = s1.find("they");
-	
-	std::cout << "before: " << s1 << std::endl;
-	
-	if (pos != std::string::npos) // npos = no position
-		s1.replace(pos, 4, s2); // position, length of substr, new substring
-
-	std::cout << "after: " << s1 << std::endl;
+	if (ac != 2)
+	{
+		std::cerr << "Usage: " << av[0] << " level: DEBUG, INFO, WARNING or ERROR" << std::endl;
+		return (1);
+	}
+	Harl	anotherNewHarl(av[1]);
 	
 	return (0);
 }

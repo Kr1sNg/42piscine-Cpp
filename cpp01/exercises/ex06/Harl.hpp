@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   string_find_replace.cpp                            :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 11:51:45 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/25 17:40:55 by tat-nguy         ###   ########.fr       */
+/*   Created: 2025/06/25 20:12:15 by tat-nguy          #+#    #+#             */
+/*   Updated: 2025/06/26 14:08:56 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
+#ifndef _HARL_TWO_HPP_
+# define _HARL_TWO_HPP_
 
-int	main(void)
+# include <string>
+# include <iostream>
+
+class Harl
 {
-	std::string	s1("There they go again!"),
-				s2("Bob and Bill");
-	int			pos = s1.find("they");
-	
-	std::cout << "before: " << s1 << std::endl;
-	
-	if (pos != std::string::npos) // npos = no position
-		s1.replace(pos, 4, s2); // position, length of substr, new substring
+	private:
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
+		
+	public:
+		Harl(std::string level);
+		~Harl(void);
 
-	std::cout << "after: " << s1 << std::endl;
+		void	complain(std::string level);
 	
-	return (0);
-}
+};
+
+
+#endif

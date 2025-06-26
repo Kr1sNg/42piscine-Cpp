@@ -1,0 +1,25 @@
+We all know about the structures used in C and C++. The one that allows to bundle multiple primitive data types into user defined data type.
+
+In python, can define a structure using a class, where the user does not define any functions in the class.
+
+Ok, I know that even though C doesn’t, C++ allows function definitions in structure. This is a feature I have never used. I can’t remember making a class with all data members and member functions as public, where it makes sense to use a struct instead of a class.
+
+Structures come very handy to define a complex data type that is formed by using multiple simple primitive data types.
+
+In Python, there is a way where you can define a collection that mimics properties similar to the structure by using namedtuple under collections.
+
+An example below, a collections.namedtuple Point is defined that contains x and y fields.
+
+We all know about the structures used in C and C++. The one that allows to bundle multiple primitive data types into user defined data type.
+
+In python, can define a structure using a class, where the user does not define any functions in the class.
+
+Ok, I know that even though C doesn’t, C++ allows function definitions in structure. This is a feature I have never used. I can’t remember making a class with all data members and member functions as public, where it makes sense to use a struct instead of a class.
+
+Structures come very handy to define a complex data type that is formed by using multiple simple primitive data types.
+
+In Python, there is a way where you can define a collection that mimics properties similar to the structure by using namedtuple under collections.
+
+An example below, a collections.namedtuple Point is defined that contains x and y fields.
+
+
