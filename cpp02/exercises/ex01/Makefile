@@ -6,7 +6,7 @@
 #    By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/26 17:42:09 by tat-nguy          #+#    #+#              #
-#    Updated: 2025/06/26 17:42:26 by tat-nguy         ###   ########.fr        #
+#    Updated: 2025/06/30 22:21:50 by tat-nguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ RESET = \033[0m
 
 # **************************** #
 
-NAME = harlFilter
+NAME = Fixed
 
 # Source Files
 SRCS     	= $(wildcard *.cpp)
@@ -50,15 +50,14 @@ clean:
 
 fclean:	clean
 	@$(RM) $(NAME)
+	@find . -name "*.dSYM" -type d -exec $(RM) {} +
 	@echo "$(RED) 🚽  Deleted ❄️  $(NAME) ❄️$(RESET)"
 
 re: fclean all
 
 # Debug & Memory leaks (iOs)
 ASANFLAGS = -fsanitize=address -g
-asan: 
+asan: fclean
 	$(CXX) $(CXXFLAGS) $(ASANFLAGS) -o $(NAME) $(SRCS)
-asclean: fclean
-	find . -name "*.dSYM" -type d -exec $(RM) {} +
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re asan
