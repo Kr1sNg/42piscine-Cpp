@@ -6,7 +6,7 @@
 #    By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/26 17:42:09 by tat-nguy          #+#    #+#              #
-#    Updated: 2025/06/30 22:23:05 by tat-nguy         ###   ########.fr        #
+#    Updated: 2025/07/01 19:53:54 by tat-nguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ RESET = \033[0m
 NAME = Fixed
 
 # Source Files
-SRCS     	= $(wildcard *.cpp)
+SRCS     	= main.cpp Fixed.cpp
 
 # Object Files
 OBJS = $(SRCS:.cpp=.o)

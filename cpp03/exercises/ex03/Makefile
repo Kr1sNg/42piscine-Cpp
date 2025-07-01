@@ -6,7 +6,7 @@
 #    By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/26 17:42:09 by tat-nguy          #+#    #+#              #
-#    Updated: 2025/06/30 22:22:51 by tat-nguy         ###   ########.fr        #
+#    Updated: 2025/07/01 22:28:47 by tat-nguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,10 +19,10 @@ RESET = \033[0m
 
 # **************************** #
 
-NAME = Fixed
+NAME = DiamondTrap
 
 # Source Files
-SRCS     	= $(wildcard *.cpp)
+SRCS     	= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 # Object Files
 OBJS = $(SRCS:.cpp=.o)

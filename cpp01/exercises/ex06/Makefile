@@ -6,7 +6,7 @@
 #    By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 15:19:42 by tat-nguy          #+#    #+#              #
-#    Updated: 2025/06/26 16:04:32 by tat-nguy         ###   ########.fr        #
+#    Updated: 2025/07/01 19:53:01 by tat-nguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ RESET = \033[0m
 NAME = harlFilter
 
 # Source Files
-SRCS     	= $(wildcard *.cpp)
+SRCS     	= main.cpp Harl.cpp
 
 # Object Files
 OBJS = $(SRCS:.cpp=.o)
