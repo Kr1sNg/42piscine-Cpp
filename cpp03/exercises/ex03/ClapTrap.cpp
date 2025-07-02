@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 14:40:09 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/02 10:19:22 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/02 20:11:21 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ ClapTrap	&ClapTrap::operator=(ClapTrap const &rhs)
 {
 	if (this != &rhs)
 	{
-		std::cout << "ClapTrap " << _name << " is assigned equal with " << rhs._name << std::endl;
 		_name = rhs._name + "_2";
 		_hit_pnt = rhs._hit_pnt;
 		_enrg_pnt = rhs._enrg_pnt;
 		_attk_dmg = rhs._attk_dmg;
+		std::cout << "ClapTrap " << _name << " is assigned equal with " << rhs._name << std::endl;
 	}
 	return (*this);
 }
@@ -65,12 +65,12 @@ void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (_hit_pnt >= (int)amount)
 	{
-		std::cout << _name << " is attacked and lost " << amount << " hit points." << std::endl;
+		std::cout << "ClapTrap " << _name << " is attacked and lost " << amount << " hit points." << std::endl;
 		_hit_pnt -= (int)amount;
 	}
 	else
 	{
-		std::cout << _name << " is attacked and lost " << _hit_pnt << " hit points." << std::endl;
+		std::cout << "ClapTrap " << _name << " is attacked and lost " << _hit_pnt << " hit points." << std::endl;
 		_hit_pnt = 0;
 	}
 }
@@ -81,9 +81,9 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	{
 		_hit_pnt += (int)amount;
 		_enrg_pnt -= 1;
-		std::cout << _name << " is repaired " << amount << " hit points." << std::endl;
+		std::cout << "ClapTrap " << _name << " is repaired " << amount << " hit points." << std::endl;
 	}
 	else
-		std::cout << _name << " doesn't have enough energy points to repaire." << std::endl;
+		std::cout << "ClapTrap " << _name << " doesn't have enough energy points to repaire." << std::endl;
 }
 

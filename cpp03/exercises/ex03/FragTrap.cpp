@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 22:11:37 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/02 10:19:22 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/02 20:13:44 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ FragTrap::FragTrap(std::string const name): ClapTrap(name)
 	return ;
 }
 
-FragTrap::FragTrap(FragTrap const &src)
+FragTrap::FragTrap(FragTrap const &src): ClapTrap(src._name + "_copy")
 {
 	_name = src._name + "_copy";
 	_hit_pnt = src._hit_pnt;
@@ -50,11 +50,11 @@ FragTrap	&FragTrap::operator=(FragTrap const &rhs)
 {
 	if (this != &rhs)
 	{
-		std::cout << " 🐸 FragTrap " << _name << " is assigned equal with " << rhs._name << std::endl;
 		_name = rhs._name + "_2";
 		_hit_pnt = rhs._hit_pnt;
 		_enrg_pnt = rhs._enrg_pnt;
 		_attk_dmg = rhs._attk_dmg;
+		std::cout << " 🐸 FragTrap " << _name << " is assigned equal with " << rhs._name << std::endl;
 	}
 	return (*this);
 }
