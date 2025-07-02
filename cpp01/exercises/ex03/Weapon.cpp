@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 11:17:48 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/24 18:44:00 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/02 11:57:26 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Weapon::~Weapon(void)
 	return ;
 }
 
-const std::string	&Weapon::getType(void) const
+std::string const	&Weapon::getType(void) const
 {
 	return (_type);
 };

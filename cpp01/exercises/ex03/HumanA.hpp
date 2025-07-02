@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 11:18:29 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/24 19:01:34 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/02 12:01:34 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "Weapon.hpp"
 
 // we can use pointer for HumanA in the same way with HumanB, but can't do reverse
+// but reference is always preferred (bcs the weapon of A is always existed and never change)
 
 class HumanA
 {

@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 11:17:31 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/24 18:44:08 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/02 11:57:13 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class Weapon
 		Weapon(const std::string &weapon);
 		~Weapon(void);
 	
-		const 	std::string &getType(void) const;
-		void	setType(const std::string &newType);
+		std::string const	&getType(void) const;
+		void				setType(const std::string &newType);
 
 };
 
