@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 22:29:14 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/02 10:16:30 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/02 11:24:32 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,13 @@ DiamondTrap::DiamondTrap(std::string const name): ClapTrap(name + "_clap_name"),
 	return ;
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap const &src): _name(src._name + "_copy"), _hit_pnt(src._hit_pnt), _enrg_pnt(src._enrg_pnt), _attk_dmg(src._attk_dmg)
+DiamondTrap::DiamondTrap(DiamondTrap const &src)
 {
+	_name = src._name + "_copy";
 	ClapTrap::_name = _name + "_clap_name";
+	_hit_pnt = src._hit_pnt;
+	_enrg_pnt = src._enrg_pnt;
+	_attk_dmg = src._attk_dmg;
 	std::cout << " 💎 DiamondTrap " << this->_name << " is a clone of " << src._name << std::endl;
 	return ;
 }
