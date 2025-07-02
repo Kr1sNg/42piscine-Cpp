@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 22:29:14 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/02 11:24:32 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/02 21:59:55 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ DiamondTrap::~DiamondTrap()
 	return ;
 }
 
-DiamondTrap::DiamondTrap(std::string const name): ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name), _name(name)
+DiamondTrap::DiamondTrap(std::string const name): ClapTrap(), ScavTrap(), FragTrap(), _name(name)
 {
+	ClapTrap::_name = _name + "_clap_name";
 	_hit_pnt = FragTrap::_hit_pnt;
 	_enrg_pnt = ScavTrap::_enrg_pnt;
 	_attk_dmg = FragTrap::_attk_dmg;
@@ -39,7 +40,7 @@ DiamondTrap::DiamondTrap(std::string const name): ClapTrap(name + "_clap_name"),
 	return ;
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap const &src)
+DiamondTrap::DiamondTrap(DiamondTrap const &src): ClapTrap(), ScavTrap(), FragTrap()
 {
 	_name = src._name + "_copy";
 	ClapTrap::_name = _name + "_clap_name";
@@ -54,12 +55,12 @@ DiamondTrap	&DiamondTrap::operator=(DiamondTrap const &rhs)
 {
 	if (this != &rhs)
 	{
-		std::cout << " 💎 DiamondTrap " << _name << " is assigned equal with " << rhs._name << std::endl;
 		_name = rhs._name + "_2";
 		ClapTrap::_name = _name + "_clap_name";
 		_hit_pnt = rhs._hit_pnt;
 		_enrg_pnt = rhs._enrg_pnt;
 		_attk_dmg = rhs._attk_dmg;
+		std::cout << " 💎 DiamondTrap " << _name << " is assigned equal with " << rhs._name << std::endl;
 	}
 	return (*this);
 }

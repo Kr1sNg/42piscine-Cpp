@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 14:40:09 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/02 10:19:22 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/02 20:11:21 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ ClapTrap	&ClapTrap::operator=(ClapTrap const &rhs)
 {
 	if (this != &rhs)
 	{
-		std::cout << "ClapTrap " << _name << " is assigned equal with " << rhs._name << std::endl;
 		_name = rhs._name + "_2";
 		_hit_pnt = rhs._hit_pnt;
 		_enrg_pnt = rhs._enrg_pnt;
 		_attk_dmg = rhs._attk_dmg;
+		std::cout << "ClapTrap " << _name << " is assigned equal with " << rhs._name << std::endl;
 	}
 	return (*this);
 }
