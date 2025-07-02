@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 22:29:14 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/01 23:43:34 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/02 10:16:30 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 DiamondTrap::DiamondTrap(void): ClapTrap(), ScavTrap(), FragTrap()
 {
-	_name = "unknown";
+	_name = "default";
 	ClapTrap::_name = _name + "_clap_name";
 	_hit_pnt = FragTrap::_hit_pnt;
 	_enrg_pnt = ScavTrap::_enrg_pnt;
@@ -41,6 +41,7 @@ DiamondTrap::DiamondTrap(std::string const name): ClapTrap(name + "_clap_name"),
 
 DiamondTrap::DiamondTrap(DiamondTrap const &src): _name(src._name + "_copy"), _hit_pnt(src._hit_pnt), _enrg_pnt(src._enrg_pnt), _attk_dmg(src._attk_dmg)
 {
+	ClapTrap::_name = _name + "_clap_name";
 	std::cout << " 💎 DiamondTrap " << this->_name << " is a clone of " << src._name << std::endl;
 	return ;
 }
@@ -50,7 +51,8 @@ DiamondTrap	&DiamondTrap::operator=(DiamondTrap const &rhs)
 	if (this != &rhs)
 	{
 		std::cout << " 💎 DiamondTrap " << _name << " is assigned equal with " << rhs._name << std::endl;
-		_name = rhs._name;
+		_name = rhs._name + "_2";
+		ClapTrap::_name = _name + "_clap_name";
 		_hit_pnt = rhs._hit_pnt;
 		_enrg_pnt = rhs._enrg_pnt;
 		_attk_dmg = rhs._attk_dmg;

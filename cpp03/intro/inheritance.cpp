@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 08:54:22 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/01 14:35:51 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/02 10:01:46 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Animal
 };
 
 
-class Cat : public Animal
+class Cat: public virtual Animal
 {
 	// private:
 	// 	int	_numberOfLegs;
@@ -46,7 +46,7 @@ class Cat : public Animal
 		
 };
 
-class Pony : public Animal
+class Pony: virtual public Animal
 {
 	// private:
 	// 	int	_numberOfLegs;
@@ -54,10 +54,28 @@ class Pony : public Animal
 	public:
 		Pony();
 		Pony(Pony const &);
-		Pony	&operator=(Cat const &);
+		Pony	&operator=(Pony const &);
 		~Pony();
 		
 		// void	run(int distance);
 
 		void	doMagic(std::string const &target);
+};
+
+class Dome: public Cat, public Pony
+{
+	private:
+		std::string _name;
+		// int	_numberOfLegs; // already had
+	
+	public:
+		Dome();
+		Dome(Dome const &);
+		Dome	&operator=(Dome const &);
+		~Dome();
+		
+		// void	run(int distance); // already had
+		// void	scornSomeone(std::string const &target); // already had
+		// void	doMagic(std::string const &target); // already had
+
 };

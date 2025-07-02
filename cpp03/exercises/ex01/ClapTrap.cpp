@@ -6,13 +6,13 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 14:40:09 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/01 22:58:16 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/02 10:19:22 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void): _name("unknown"), _hit_pnt(10), _enrg_pnt(10), _attk_dmg(0)
+ClapTrap::ClapTrap(void): _name("default"), _hit_pnt(10), _enrg_pnt(10), _attk_dmg(0)
 {
 	std::cout << "ClapTrap default constructor called." << std::endl;
 	return ;
@@ -41,7 +41,7 @@ ClapTrap	&ClapTrap::operator=(ClapTrap const &rhs)
 	if (this != &rhs)
 	{
 		std::cout << "ClapTrap " << _name << " is assigned equal with " << rhs._name << std::endl;
-		_name = rhs._name;
+		_name = rhs._name + "_2";
 		_hit_pnt = rhs._hit_pnt;
 		_enrg_pnt = rhs._enrg_pnt;
 		_attk_dmg = rhs._attk_dmg;
