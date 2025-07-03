@@ -6,24 +6,27 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:21:16 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/02 14:47:43 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/03 12:13:46 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
 
+// keyword: virtual => means dynamic, not static!
+// virtual member function/ method
+
 class Character
 {
 	public:
-		void	sayHello(std::string const &target);
+		virtual void	sayHello(std::string const &target);
 
 };
 
 class Warrior: public Character
 {
 	public:
-		void	sayHello(std::string const &target); // re-define by function overwriting
+		virtual void	sayHello(std::string const &target); // re-define by function overwriting
 		
 };
 
@@ -48,7 +51,7 @@ int	main(void)
 	Warrior		*a = new Warrior();
 
 	// it's also ok bcs Warrior is a Character
-	Character	*b = new Warrior();
+	Character	*b = new Warrior(); // without keyword virtual, it will act like a Character
 
 	// but it'd not be ok bcs Character is NOT Warrior
 	// Warrior		*c = new Character();
@@ -56,6 +59,9 @@ int	main(void)
 	a->sayHello("students");
 
 	b->sayHello("Students");
+
+	delete (a);
+	delete (b);
 	
 	return (0);
 }
