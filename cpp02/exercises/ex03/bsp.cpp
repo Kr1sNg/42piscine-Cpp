@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 17:37:46 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/30 22:08:04 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/03 14:22:30 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,15 @@ Fixed	AreaOfTriangle(Point const a, Point const b, Point const c)
 bool	bsp(Point const a, Point const b, Point const c, Point const point)
 {
 	Fixed	areaABC = AreaOfTriangle(a, b, c);
-	std::cout << "ABC: " << areaABC << std::endl;
+	// std::cout << "ABC: " << areaABC << std::endl;
 	Fixed	areaABP = AreaOfTriangle(a, b, point);
-	std::cout << "ABP: " << areaABP << std::endl;
+	// std::cout << "ABP: " << areaABP << std::endl;
 	Fixed	areaACP = AreaOfTriangle(a, c, point);
-	std::cout << "ACP: " << areaACP << std::endl;
+	// std::cout << "ACP: " << areaACP << std::endl;
 	Fixed	areaBCP = AreaOfTriangle(b, c, point);
-	std::cout << "BCP: " << areaBCP << std::endl;
+	// std::cout << "BCP: " << areaBCP << std::endl;
 	
-	std::cout << "ABP + ACP + BCP: " << areaABP + areaACP + areaBCP << std::endl;
+	// std::cout << "ABP + ACP + BCP: " << areaABP + areaACP + areaBCP << std::endl;
 
 	return (areaABP != 0 && areaACP != 0 && areaBCP != 0 && areaABP + areaACP + areaBCP == areaABC);
 }

@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 20:22:29 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/06/25 20:25:20 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/03 13:53:46 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ int	main(int ac, char**av)
 		return (1);
 	}
 	
-	std::ofstream	ofs(std::string(av[1]) + ".replace"); //create output file stream
+	std::string		replace = std::string(av[1]) + ".replace";
+	std::ofstream	ofs(replace.c_str()); //create output file stream
 	if (!ofs)
 	{
 		std::cerr << "Can't create output file" << std::endl;
