@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 14:39:56 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/01 23:47:25 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/04 11:35:04 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(void)
 	std::cout << std::endl;
 
 	a.attack("Peter");
-	b.takeDamage(20);
+	b.takeDamage(99);
 	b.beRepaired(15);
 
 	std::cout << std::endl;
@@ -33,6 +33,8 @@ int	main(void)
 	a.takeDamage(20);
 	a.beRepaired(20);
 	a.guardGate();
+	
+	std::cout << std::endl;
 	
 	return (0);
 }

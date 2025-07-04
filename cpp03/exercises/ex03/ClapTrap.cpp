@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 14:40:09 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/02 20:11:21 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/04 11:01:52 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,19 +51,23 @@ ClapTrap	&ClapTrap::operator=(ClapTrap const &rhs)
 		
 void	ClapTrap::attack(const std::string &target)
 {
-	if (_enrg_pnt > 0)
+	if (_enrg_pnt > 0 && _hit_pnt > 0)
 	{
 		std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _attk_dmg << " points of damage!" << std::endl;
 		_enrg_pnt -= 1;
 	}
 	else
-		std::cout << "ClapTrap " << _name << " doesn't have enough energy points to attack." << std::endl;
+		std::cout << "ClapTrap " << _name << " doesn't have enough hit points or energy points to attack." << std::endl;
 	
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	if (_hit_pnt >= (int)amount)
+	if (_hit_pnt == 0)
+	{
+		std::cout << "ClapTrap " << _name << " has no hit point." << std::endl;
+	}
+	else if (_hit_pnt >= (int)amount)
 	{
 		std::cout << "ClapTrap " << _name << " is attacked and lost " << amount << " hit points." << std::endl;
 		_hit_pnt -= (int)amount;
@@ -77,13 +81,13 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	if (_enrg_pnt > 0)
+	if (_enrg_pnt > 0 && _hit_pnt > 0)
 	{
 		_hit_pnt += (int)amount;
 		_enrg_pnt -= 1;
 		std::cout << "ClapTrap " << _name << " is repaired " << amount << " hit points." << std::endl;
 	}
 	else
-		std::cout << "ClapTrap " << _name << " doesn't have enough energy points to repaire." << std::endl;
+		std::cout << "ClapTrap " << _name << " doesn't have enough hit points or energy points to repaire." << std::endl;
 }
 

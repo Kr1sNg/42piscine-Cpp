@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 22:29:14 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/02 21:59:55 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/04 10:54:44 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@ DiamondTrap::DiamondTrap(void): ClapTrap(), ScavTrap(), FragTrap()
 {
 	_name = "default";
 	ClapTrap::_name = _name + "_clap_name";
-	_hit_pnt = FragTrap::_hit_pnt;
-	_enrg_pnt = ScavTrap::_enrg_pnt;
-	_attk_dmg = FragTrap::_attk_dmg;
+	_hit_pnt = FragTrap::getDefaultHP();
+	_enrg_pnt = ScavTrap::getDefaultEP();
+	_attk_dmg = FragTrap::getDefaultAD();
 	
-	std::cout << " 💎 DiamondTrap default constructor called." << std::endl;
+	std::cout << " 💎 DiamondTrap default constructor called with "
+			  << "HP: " << _hit_pnt << ", EP: " << _enrg_pnt << ", AD: " << _attk_dmg << std::endl;
 	return ;
 }
 
@@ -33,10 +34,12 @@ DiamondTrap::~DiamondTrap()
 DiamondTrap::DiamondTrap(std::string const name): ClapTrap(), ScavTrap(), FragTrap(), _name(name)
 {
 	ClapTrap::_name = _name + "_clap_name";
-	_hit_pnt = FragTrap::_hit_pnt;
-	_enrg_pnt = ScavTrap::_enrg_pnt;
-	_attk_dmg = FragTrap::_attk_dmg;
-	std::cout << " 💎 DiamondTrap " << _name << " is created." << std::endl;
+	_hit_pnt = FragTrap::getDefaultHP();
+	_enrg_pnt = ScavTrap::getDefaultEP();
+	_attk_dmg = FragTrap::getDefaultAD();
+	
+	std::cout << " 💎 DiamondTrap " << _name << " is created with "
+			  << "HP: " << _hit_pnt << ", EP: " << _enrg_pnt << ", AD: " << _attk_dmg << std::endl;
 	return ;
 }
 

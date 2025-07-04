@@ -6,12 +6,14 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 19:15:50 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/01 23:43:04 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/04 10:48:54 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _SCAVTRAP_HPP_
 # define _SCAVTRAP_HPP_
+
+# define SCAV_ENGPNT 50
 
 # include "ClapTrap.hpp"
 
@@ -27,6 +29,8 @@ class ScavTrap: public virtual ClapTrap
 		void	attack(const std::string &target);
 		
 		void	guardGate(void);
+
+		int		getDefaultEP(void);
 		
 };
 

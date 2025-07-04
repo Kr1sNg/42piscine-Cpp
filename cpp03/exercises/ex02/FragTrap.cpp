@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 22:11:37 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/02 20:13:44 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/04 11:28:54 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,13 @@ FragTrap	&FragTrap::operator=(FragTrap const &rhs)
 
 void	FragTrap::attack(const std::string &target)
 {
-	if (_enrg_pnt > 0)
+	if (_enrg_pnt > 0 && _hit_pnt > 0)
 	{
 		std::cout << " 🐸 FragTrap " << _name << " attacks " << target << ", causing " << _attk_dmg << " points of damage!" << std::endl;
 		_enrg_pnt -= 1;
 	}
 	else
-		std::cout << " 🐸 FragTrap " << _name << " doesn't have enough energy points to attack." << std::endl;
-	
+		std::cout << " 🐸 FragTrap " << _name << " doesn't have enough hit points or energy points to attack." << std::endl;
 }
 
 void	FragTrap::highFivesGuys(void)

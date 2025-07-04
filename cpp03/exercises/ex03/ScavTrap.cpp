@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 19:15:40 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/02 20:10:39 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/04 11:29:23 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,17 +61,21 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &rhs)
 
 void	ScavTrap::attack(const std::string &target)
 {
-	if (_enrg_pnt > 0)
+	if (_enrg_pnt > 0 && _hit_pnt > 0)
 	{
 		std::cout << " 🤖 ScavTrap " << _name << " attacks " << target << ", causing " << _attk_dmg << " points of damage!" << std::endl;
 		_enrg_pnt -= 1;
 	}
 	else
-		std::cout << " 🤖 ScavTrap " << _name << " doesn't have enough energy points to attack." << std::endl;
-	
+		std::cout << " 🤖 ScavTrap " << _name << " doesn't have enough hit points or energy points to attack." << std::endl;
 }
 
 void	ScavTrap::guardGate(void)
 {
 	std::cout << " 🤖 ScavTrap " << _name << " is now in Gate keeper mode." << std::endl;
+}
+
+int	ScavTrap::getDefaultEP(void)
+{
+	return (SCAV_ENGPNT);
 }

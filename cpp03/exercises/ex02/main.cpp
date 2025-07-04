@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 14:39:56 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/01 23:47:09 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/04 11:34:54 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int	main(void)
 	
 	scav.guardGate();
 	frag.highFivesGuys();
+
+	std::cout << std::endl;
 	
 	return (0);
 }
