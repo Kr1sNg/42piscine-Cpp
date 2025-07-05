@@ -6,7 +6,7 @@
 #    By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/26 17:42:09 by tat-nguy          #+#    #+#              #
-#    Updated: 2025/07/02 11:00:05 by tat-nguy         ###   ########.fr        #
+#    Updated: 2025/07/05 15:51:18 by tat-nguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,10 +19,10 @@ RESET = \033[0m
 
 # **************************** #
 
-NAME = Fixed
+NAME = Brain
 
 # Source Files
-SRCS     	= main.cpp
+SRCS     	= main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 
 # Object Files
 OBJS = $(SRCS:.cpp=.o)

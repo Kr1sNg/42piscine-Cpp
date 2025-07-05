@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 19:08:20 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/05 17:09:51 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/05 16:46:56 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,13 @@
 # include <string>
 # include <iostream>
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Cat: public Animal
 {
+	private:
+		Brain	*_brain;
+	
 	public:
 		Cat(void);
 		Cat(Cat const &src);
@@ -26,7 +30,6 @@ class Cat: public Animal
 		~Cat(void);
 	
 		void	makeSound(void) const;
-		
 };
 
 #endif

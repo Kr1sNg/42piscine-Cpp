@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 19:08:04 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/04 20:43:30 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/05 17:09:58 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Dog: public Animal
 		Dog	&operator=(Dog const &rhs);
 		~Dog(void);
 
-		virtual void	makeSound(void) const;
+		void	makeSound(void) const;
 };
 
 #endif

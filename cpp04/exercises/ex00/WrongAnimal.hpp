@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 10:21:05 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/05 11:41:48 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/05 16:47:43 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ class WrongAnimal
 		WrongAnimal	&operator=(WrongAnimal const &rhs);
 		
 		std::string	getType(void) const;
-		void		makeSound(void) const;
+		
+		void		makeSound(void) const; // no virtual here to show WrongAnimal sound
 
 };
 

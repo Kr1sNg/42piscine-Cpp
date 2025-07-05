@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 10:20:55 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/05 11:42:33 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/05 17:13:17 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 WrongAnimal::WrongAnimal(void)
 {
-	_type = "WrongAnimal default";
+	_type = "default WrongAnimal";
 	std::cout << " 🎅 WrongAnimal constructor called with type " << _type << std::endl;
 }
 
@@ -44,5 +44,5 @@ std::string	WrongAnimal::getType(void) const
 
 void	WrongAnimal::makeSound(void) const
 {
-	std::cout << " 🎅 Je suis human! 🤷‍♂️ (WrongCat should output the WrongAnimal sound) " << std::endl;
+	std::cout << " 🎅 Je suis human! 🤷‍ (WrongCat should output the WrongAnimal sound) " << std::endl;
 }

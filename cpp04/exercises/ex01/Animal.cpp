@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/05 10:20:28 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/05 14:40:15 by tat-nguy         ###   ########.fr       */
+/*   Created: 2025/07/04 18:39:25 by tat-nguy          #+#    #+#             */
+/*   Updated: 2025/07/05 17:23:26 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#include "Animal.hpp"
 
-WrongCat::WrongCat(void): WrongAnimal()
+Animal::Animal(void): _type("default")
 {
-	_type = "WrongCat";
-	std::cout << " 🐲 WrongCat constructor called with type " << _type << std::endl;
+	std::cout << "Animal constructor called with type " << _type << std::endl;
 }
 
-WrongCat::WrongCat(WrongCat const &src): WrongAnimal()
+Animal::Animal(Animal const &src): _type(src._type)
 {
-	_type = src._type;
 	return ;
 }
-WrongCat	&WrongCat::operator=(WrongCat const &rhs)
+Animal	&Animal::operator=(Animal const &rhs)
 {
 	if (this != &rhs)
 	{
@@ -32,12 +30,17 @@ WrongCat	&WrongCat::operator=(WrongCat const &rhs)
 	return (*this);
 }
 
-WrongCat::~WrongCat(void)
+Animal::~Animal(void)
 {
-	std::cout << " 🐲 WrongCat destructor called." << std::endl;
+	std::cout << "Animal destructor called." << std::endl;
 }
 
-void	WrongCat::makeSound(void) const
+std::string	Animal::getType(void) const
 {
-	std::cout << " 🐲 Dra... Dra... Dra...cula, oops, Dragon! " << std::endl;
+	return (_type);
+}
+
+void Animal::makeSound(void) const
+{
+	std::cout << " 🗿 Every animal knows how to make sound." << std::endl;
 }
