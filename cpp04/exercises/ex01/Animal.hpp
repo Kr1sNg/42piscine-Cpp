@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 18:39:34 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/05 17:23:33 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/07 15:07:32 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Animal
 		Animal(void);
 		Animal(Animal const &src);
 		Animal	&operator=(Animal const &rhs);
-		virtual	~Animal(void);
+		virtual	~Animal();
 
 		std::string		getType(void) const;
 		

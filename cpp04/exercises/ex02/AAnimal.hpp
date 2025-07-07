@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/04 19:08:04 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/07 19:45:16 by tat-nguy         ###   ########.fr       */
+/*   Created: 2025/07/04 18:39:34 by tat-nguy          #+#    #+#             */
+/*   Updated: 2025/07/07 19:44:32 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _DOG_HPP_
-# define _DOG_HPP_
+#ifndef _AANIMAL_HPP_
+# define _AANIMAL_HPP_
 
 # include <string>
 # include <iostream>
-# include "Animal.hpp"
-# include "Brain.hpp"
 
-class Dog: public Animal
+class AAnimal
 {
-	private:
-		Brain	*_brain;
-	
+	protected:
+		std::string	_type;
+		
 	public:
-		Dog(void);
-		Dog(Dog const &src);
-		Dog	&operator=(Dog const &rhs);
-		~Dog();
+		AAnimal(void);
+		AAnimal(AAnimal const &src);
+		AAnimal	&operator=(AAnimal const &rhs);
+		virtual	~AAnimal();
 
-		void	makeSound(void) const;
+		std::string		getType(void) const;
+		
+		virtual void	makeSound(void) const = 0; // pure virtual method
 };
 
 #endif

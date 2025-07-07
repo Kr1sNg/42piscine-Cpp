@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/04 19:08:11 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/07 19:45:30 by tat-nguy         ###   ########.fr       */
+/*   Created: 2025/07/04 19:07:55 by tat-nguy          #+#    #+#             */
+/*   Updated: 2025/07/07 19:45:01 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Dog.hpp"
 
-Cat::Cat(void): Animal()
+Dog::Dog(void): AAnimal()
 {
-	_type = "Cat";
+	_type = "Dog";
 	_brain = new Brain();
-	std::cout << " 🐱 Cat constructor called with type " << _type << std::endl;
+	std::cout << " 🐶 Dog constructor called with type " << _type << std::endl;
 }
 
-Cat::Cat(Cat const &src): Animal(src)
+Dog::Dog(Dog const &src): AAnimal(src)
 {
 	_type = src._type;
 	_brain = new Brain(*src._brain);
+	return ;
 }
 
-Cat	&Cat::operator=(Cat const &rhs)
+Dog	&Dog::operator=(Dog const &rhs)
 {
 	if (this != &rhs)
 	{
@@ -37,13 +38,13 @@ Cat	&Cat::operator=(Cat const &rhs)
 	return (*this);
 }
 
-Cat::~Cat()
+Dog::~Dog()
 {
-	std::cout << " 🐱 Cat destructor called." << std::endl;
+	std::cout << " 🐶 Dog destructor called." << std::endl;
 	delete _brain;
 }
 
-void	Cat::makeSound(void) const
+void	Dog::makeSound(void) const
 {
-	std::cout << " 🐱 Meoww actually I don't really want to meow, Meow~ " << std::endl;
+	std::cout << " 🐶 Woof Woof Woof Woof Woof " << std::endl;
 }

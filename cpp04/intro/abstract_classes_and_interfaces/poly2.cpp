@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 16:22:32 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/04 18:25:27 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/06 10:47:05 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class ACharacter
 		{
 			std::cout << "Destructor of class ACharacter" << std::endl;
 		}
-		virtual void	attack(std::string const &target) = 0;
+		virtual void	attack(std::string const &target) = 0; // pure virtual -> don't need to perform anything
 		void			sayHello(std::string const &target);
 
 };

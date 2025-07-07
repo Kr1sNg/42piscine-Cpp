@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/04 19:08:04 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/07 19:45:16 by tat-nguy         ###   ########.fr       */
+/*   Created: 2025/07/04 19:08:20 by tat-nguy          #+#    #+#             */
+/*   Updated: 2025/07/07 19:44:57 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _DOG_HPP_
-# define _DOG_HPP_
+#ifndef _CAT_HPP_
+# define _CAT_HPP_
 
 # include <string>
 # include <iostream>
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 # include "Brain.hpp"
 
-class Dog: public Animal
+class Cat: public AAnimal
 {
 	private:
 		Brain	*_brain;
 	
 	public:
-		Dog(void);
-		Dog(Dog const &src);
-		Dog	&operator=(Dog const &rhs);
-		~Dog();
-
+		Cat(void);
+		Cat(Cat const &src);
+		Cat	&operator=(Cat const &rhs);
+		~Cat();
+	
 		void	makeSound(void) const;
 };
 

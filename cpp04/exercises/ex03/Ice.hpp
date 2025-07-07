@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/04 19:08:04 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/07 19:45:16 by tat-nguy         ###   ########.fr       */
+/*   Created: 2025/07/06 22:50:11 by tat-nguy          #+#    #+#             */
+/*   Updated: 2025/07/07 19:34:49 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _DOG_HPP_
-# define _DOG_HPP_
+#ifndef _ICE_HPP_
+# define _ICE_HPP_
 
 # include <string>
 # include <iostream>
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include "AMateria.hpp"
 
-class Dog: public Animal
+class Ice: public AMateria
 {
-	private:
-		Brain	*_brain;
-	
 	public:
-		Dog(void);
-		Dog(Dog const &src);
-		Dog	&operator=(Dog const &rhs);
-		~Dog();
-
-		void	makeSound(void) const;
+		Ice(void);
+		~Ice();
+		Ice(Ice const &src);
+		Ice	&operator=(Ice const &rhs);
+		
+		Ice	*clone(void) const;
+		void	use(ICharacter &target);
 };
 
 #endif

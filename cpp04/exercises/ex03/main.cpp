@@ -5,47 +5,41 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/04 18:39:09 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/06 21:17:20 by tat-nguy         ###   ########.fr       */
+/*   Created: 2025/07/07 14:24:45 by tat-nguy          #+#    #+#             */
+/*   Updated: 2025/07/07 19:22:07 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "Brain.hpp"
+#include "Character.hpp"
+#include "ICharacter.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
+#include "AMateria.hpp"
+#include "MateriaSource.hpp"
+#include "IMateriaSource.hpp"
 
-int	main(void)
+int main()
 {
-	// const Animal *j = new Dog();
-	// const Animal *i = new Cat();
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	
+	ICharacter* me = new Character("me");
+	
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
 
-	// delete j;
-	// delete i;
-	
-	const Animal	*array[10];
-	
-	for (int i = 0; i < 5; i++)
-	{
-		array[i] = new Dog();
-	}
-	for (int i = 5; i < 10; i++)
-	{
-		array[i] = new Cat();
-	}
+	ICharacter* bob = new Character("bob");
 
-	for (int i = 0; i < 10; i++)
-	{
-		std::cout << array[i]->getType() << "_" << i << ": ";
-		array[i]->makeSound();
-	}
-	std::cout << std::endl;
+	me->use(0, *bob);
+	me->use(1, *bob);
 
-	for (int i = 0; i < 10; i++)
-	{
-		delete array[i];
-	}
-	
-	
+	delete bob;
+	delete me;
+	delete src;
+
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 14:46:36 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/05 16:43:24 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/07 19:45:34 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Brain
 		
 	public:
 		Brain(void);
-		~Brain(void);
+		~Brain();
 		Brain(Brain const &src);
 		Brain	&operator=(Brain const &rhs);
 

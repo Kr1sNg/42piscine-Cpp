@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 19:07:55 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/05 14:39:57 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/07 19:46:08 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Dog::Dog(void): Animal()
 	std::cout << " 🐶 Dog constructor called with type " << _type << std::endl;
 }
 
-Dog::Dog(Dog const &src): Animal()
+Dog::Dog(Dog const &src): Animal(src)
 {
 	_type = src._type;
 	return ;
@@ -33,7 +33,7 @@ Dog	&Dog::operator=(Dog const &rhs)
 	return (*this);
 }
 
-Dog::~Dog(void)
+Dog::~Dog()
 {
 	std::cout << " 🐶 Dog destructor called." << std::endl;
 }

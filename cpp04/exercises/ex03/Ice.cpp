@@ -1,43 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/04 19:08:11 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/07 19:46:01 by tat-nguy         ###   ########.fr       */
+/*   Created: 2025/07/06 22:56:25 by tat-nguy          #+#    #+#             */
+/*   Updated: 2025/07/07 19:16:34 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Ice.hpp"
 
-Cat::Cat(void): Animal()
+Ice::Ice(void): AMateria("ice")
 {
-	_type = "Cat";
-	std::cout << " 🐱 Cat constructor called with type " << _type << std::endl;
-}
-
-Cat::Cat(Cat const &src): Animal(src)
-{
-	_type = src._type;
 	return ;
 }
-Cat	&Cat::operator=(Cat const &rhs)
+
+Ice::~Ice()
+{
+	return ;
+}
+
+Ice::Ice(Ice const &src): AMateria(src)
+{
+	return ;
+}
+
+Ice	&Ice::operator=(Ice const &rhs)
 {
 	if (this != &rhs)
 	{
-		_type = rhs._type;
+		AMateria::operator=(rhs);
 	}
 	return (*this);
 }
-
-Cat::~Cat()
+		
+Ice	*Ice::clone(void) const
 {
-	std::cout << " 🐱 Cat destructor called." << std::endl;
+	return (new Ice(*this));
 }
 
-void	Cat::makeSound(void) const
+void	Ice::use(ICharacter &target)
 {
-	std::cout << " 🐱 Meoww actually I don't really want to meow, Meow~ " << std::endl;
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

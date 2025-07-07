@@ -6,7 +6,7 @@
 #    By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/26 17:42:09 by tat-nguy          #+#    #+#              #
-#    Updated: 2025/07/02 11:00:05 by tat-nguy         ###   ########.fr        #
+#    Updated: 2025/07/07 19:38:12 by tat-nguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,10 +19,11 @@ RESET = \033[0m
 
 # **************************** #
 
-NAME = Fixed
+NAME = Materia
 
 # Source Files
-SRCS     	= main.cpp
+SRCS     	= main.cpp AMateria.cpp Character.cpp Cure.cpp \
+				Ice.cpp MateriaSource.cpp
 
 # Object Files
 OBJS = $(SRCS:.cpp=.o)

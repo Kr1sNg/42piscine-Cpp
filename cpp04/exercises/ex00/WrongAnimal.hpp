@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 10:21:05 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/05 16:47:43 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/07 15:07:55 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class WrongAnimal
 		
 	public:
 		WrongAnimal(void);
-		virtual ~WrongAnimal(void);
+		virtual ~WrongAnimal();
 		WrongAnimal(WrongAnimal const &src);
 		WrongAnimal	&operator=(WrongAnimal const &rhs);
 		

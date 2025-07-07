@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 18:39:25 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/07 19:45:54 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/07 19:44:26 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-Animal::Animal(void): _type("default")
+AAnimal::AAnimal(void): _type("default")
 {
-	std::cout << "Animal constructor called with type " << _type << std::endl;
+	std::cout << "AAnimal constructor called with type " << _type << std::endl;
 }
 
-Animal::Animal(Animal const &src): _type(src._type)
+AAnimal::AAnimal(AAnimal const &src): _type(src._type)
 {
 	return ;
 }
-Animal	&Animal::operator=(Animal const &rhs)
+AAnimal	&AAnimal::operator=(AAnimal const &rhs)
 {
 	if (this != &rhs)
 	{
@@ -30,17 +30,13 @@ Animal	&Animal::operator=(Animal const &rhs)
 	return (*this);
 }
 
-Animal::~Animal()
+AAnimal::~AAnimal()
 {
-	std::cout << "Animal destructor called." << std::endl;
+	std::cout << "AAnimal destructor called." << std::endl;
 }
 
-std::string	Animal::getType(void) const
+std::string	AAnimal::getType(void) const
 {
 	return (_type);
 }
 
-void Animal::makeSound(void) const
-{
-	std::cout << " 🗿 Every animal knows how to make sound." << std::endl;
-}

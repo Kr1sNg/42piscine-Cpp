@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/04 19:08:04 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/07 19:45:16 by tat-nguy         ###   ########.fr       */
+/*   Created: 2025/07/06 22:50:11 by tat-nguy          #+#    #+#             */
+/*   Updated: 2025/07/07 19:34:43 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _DOG_HPP_
-# define _DOG_HPP_
+#ifndef _CURE_HPP_
+# define _CURE_HPP_
 
 # include <string>
 # include <iostream>
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include "AMateria.hpp"
 
-class Dog: public Animal
+class Cure: public AMateria
 {
-	private:
-		Brain	*_brain;
-	
 	public:
-		Dog(void);
-		Dog(Dog const &src);
-		Dog	&operator=(Dog const &rhs);
-		~Dog();
-
-		void	makeSound(void) const;
+		Cure(void);
+		~Cure();
+		Cure(Cure const &src);
+		Cure	&operator=(Cure const &rhs);
+		
+		Cure	*clone(void) const;
+		void	use(ICharacter &target);
+		
 };
 
 #endif

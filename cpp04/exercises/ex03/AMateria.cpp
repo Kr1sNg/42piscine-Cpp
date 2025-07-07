@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/04 18:39:25 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/07 19:45:54 by tat-nguy         ###   ########.fr       */
+/*   Created: 2025/07/06 22:39:41 by tat-nguy          #+#    #+#             */
+/*   Updated: 2025/07/07 19:42:31 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AMateria.hpp"
 
-Animal::Animal(void): _type("default")
-{
-	std::cout << "Animal constructor called with type " << _type << std::endl;
-}
-
-Animal::Animal(Animal const &src): _type(src._type)
+AMateria::AMateria(std::string const &type): _type(type)
 {
 	return ;
 }
-Animal	&Animal::operator=(Animal const &rhs)
+
+AMateria::AMateria(void): _type("")
+{
+	return ;
+}
+
+AMateria::~AMateria()
+{
+	return ;
+}
+
+AMateria::AMateria(AMateria const &src)
+{
+	*this = src; // if using deep copy in operator =
+}
+
+AMateria	&AMateria::operator=(AMateria const &rhs)
 {
 	if (this != &rhs)
 	{
@@ -30,17 +41,12 @@ Animal	&Animal::operator=(Animal const &rhs)
 	return (*this);
 }
 
-Animal::~Animal()
-{
-	std::cout << "Animal destructor called." << std::endl;
-}
-
-std::string	Animal::getType(void) const
+std::string const	&AMateria::getType(void) const
 {
 	return (_type);
 }
 
-void Animal::makeSound(void) const
+void	AMateria::use(ICharacter &target)
 {
-	std::cout << " 🗿 Every animal knows how to make sound." << std::endl;
+	(void)target;
 }

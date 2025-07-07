@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 10:20:28 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/05 14:40:15 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/07 15:08:08 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ WrongCat	&WrongCat::operator=(WrongCat const &rhs)
 	return (*this);
 }
 
-WrongCat::~WrongCat(void)
+WrongCat::~WrongCat()
 {
 	std::cout << " 🐲 WrongCat destructor called." << std::endl;
 }

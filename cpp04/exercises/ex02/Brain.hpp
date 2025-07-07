@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/04 19:08:04 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/07 19:45:16 by tat-nguy         ###   ########.fr       */
+/*   Created: 2025/07/05 14:46:36 by tat-nguy          #+#    #+#             */
+/*   Updated: 2025/07/07 15:07:24 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _DOG_HPP_
-# define _DOG_HPP_
+#ifndef _BRAIN_HPP_
+# define _BRAIN_HPP_
 
 # include <string>
 # include <iostream>
-# include "Animal.hpp"
-# include "Brain.hpp"
 
-class Dog: public Animal
+class Brain
 {
 	private:
-		Brain	*_brain;
-	
+		std::string	_ideas[100];
+		
 	public:
-		Dog(void);
-		Dog(Dog const &src);
-		Dog	&operator=(Dog const &rhs);
-		~Dog();
+		Brain(void);
+		~Brain();
+		Brain(Brain const &src);
+		Brain	&operator=(Brain const &rhs);
 
-		void	makeSound(void) const;
+		std::string	getIdea(int index) const;
+		void	setIdea(int index, std::string const &idea);
+		
 };
 
 #endif

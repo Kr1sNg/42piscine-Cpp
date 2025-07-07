@@ -6,44 +6,35 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 18:39:09 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/06 23:08:10 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/06 22:24:09 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "Brain.hpp"
 
 int	main(void)
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	// const AAnimal* meta = new AAnimal(); //-> Abstract class => can't instantiate object
+	// AAnimal meta(void); 					//-> Abstract class => can't instantiate object
+	const AAnimal* j = new Dog();
+	const AAnimal* i = new Cat();
+	
 
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
-	meta->makeSound();
+	// meta->makeSound();
 
-	delete meta;
+	// delete meta;
 	delete j;
 	delete i;
 
 	std::cout << std::endl;
-	
-	const WrongAnimal	*hm = new WrongAnimal();
-	const WrongAnimal	*d = new WrongCat();
 
-	std::cout << hm->getType() << " " << std::endl;
-	std::cout << d->getType() << " " << std::endl;
-	
-	hm->makeSound();
-	d->makeSound();
-	delete d;	
-	
 	return 0;
 }

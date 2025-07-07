@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 10:20:55 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/05 17:13:17 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/07 19:46:16 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ WrongAnimal::WrongAnimal(void)
 	std::cout << " 🎅 WrongAnimal constructor called with type " << _type << std::endl;
 }
 
-WrongAnimal::~WrongAnimal(void)
+WrongAnimal::~WrongAnimal()
 {
 	std::cout << " 🎅 WrongAnimal is destroy." << std::endl;
 }

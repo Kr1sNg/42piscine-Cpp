@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 19:07:55 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/05 17:26:59 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/07 19:45:21 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Dog	&Dog::operator=(Dog const &rhs)
 	return (*this);
 }
 
-Dog::~Dog(void)
+Dog::~Dog()
 {
 	std::cout << " 🐶 Dog destructor called." << std::endl;
 	delete _brain;

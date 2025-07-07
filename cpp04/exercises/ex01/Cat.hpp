@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 19:08:20 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/05 16:46:56 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/07 19:45:26 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Cat: public Animal
 		Cat(void);
 		Cat(Cat const &src);
 		Cat	&operator=(Cat const &rhs);
-		~Cat(void);
+		~Cat();
 	
 		void	makeSound(void) const;
 };

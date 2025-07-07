@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 18:39:25 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/05 17:23:26 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/07 19:45:48 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Animal	&Animal::operator=(Animal const &rhs)
 	return (*this);
 }
 
-Animal::~Animal(void)
+Animal::~Animal()
 {
 	std::cout << "Animal destructor called." << std::endl;
 }

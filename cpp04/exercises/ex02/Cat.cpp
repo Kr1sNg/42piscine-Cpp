@@ -6,20 +6,20 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 19:08:11 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/07 19:45:30 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/07 19:44:50 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat(void): Animal()
+Cat::Cat(void): AAnimal()
 {
 	_type = "Cat";
 	_brain = new Brain();
 	std::cout << " 🐱 Cat constructor called with type " << _type << std::endl;
 }
 
-Cat::Cat(Cat const &src): Animal(src)
+Cat::Cat(Cat const &src): AAnimal(src)
 {
 	_type = src._type;
 	_brain = new Brain(*src._brain);
