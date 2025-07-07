@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 18:39:09 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/06 23:08:10 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/07 20:25:03 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ int	main(void)
 	
 	hm->makeSound();
 	d->makeSound();
-	delete d;	
+	delete d;
+	delete hm;
 	
 	return 0;
 }
