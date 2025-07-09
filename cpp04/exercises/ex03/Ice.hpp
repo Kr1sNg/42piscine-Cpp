@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 22:50:11 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/09 09:36:27 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/09 11:41:44 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ class Ice: public AMateria
 		Ice(Ice const &src);
 		Ice	&operator=(Ice const &rhs);
 		
-		Ice	*clone(void) const;
-		void	use(ICharacter &target);
+		AMateria	*clone(void) const;
+		void		use(ICharacter &target);
 };
 
 #endif

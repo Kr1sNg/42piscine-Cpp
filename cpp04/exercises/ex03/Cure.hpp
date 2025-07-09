@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 22:50:11 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/09 09:34:53 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/09 11:41:12 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ class Cure: public AMateria
 		Cure(Cure const &src);
 		Cure	&operator=(Cure const &rhs);
 		
-		Cure	*clone(void) const;
-		void	use(ICharacter &target);
+		AMateria	*clone(void) const;
+		void		use(ICharacter &target);
 		
 };
 

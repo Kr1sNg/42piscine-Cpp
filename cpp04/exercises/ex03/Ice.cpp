@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 22:56:25 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/09 09:36:11 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/09 11:41:56 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Ice	&Ice::operator=(Ice const &rhs)
 	return (*this);
 }
 		
-Ice	*Ice::clone(void) const
+AMateria	*Ice::clone(void) const
 {
 	return (new Ice());
 }

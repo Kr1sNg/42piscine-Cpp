@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 22:56:25 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/09 09:34:32 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/09 11:41:23 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Cure	&Cure::operator=(Cure const &rhs)
 	return (*this);
 }
 		
-Cure	*Cure::clone(void) const
+AMateria	*Cure::clone(void) const
 {
 	return (new Cure());	
 }
