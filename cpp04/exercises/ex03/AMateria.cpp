@@ -6,11 +6,12 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 22:39:41 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/07 19:42:31 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/09 09:32:06 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 AMateria::AMateria(std::string const &type): _type(type)
 {

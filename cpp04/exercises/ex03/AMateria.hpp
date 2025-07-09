@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 22:27:16 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/07 19:43:04 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/09 09:31:54 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 # include <string>
 # include <iostream>
-# include "ICharacter.hpp"
+
+class ICharacter;
 
 class AMateria
 {

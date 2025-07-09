@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 22:50:11 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/07 19:34:49 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/09 09:36:27 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string>
 # include <iostream>
 # include "AMateria.hpp"
+# include "ICharacter.hpp"
 
 class Ice: public AMateria
 {

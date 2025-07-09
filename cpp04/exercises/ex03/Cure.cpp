@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 22:56:25 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/07 19:14:02 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/09 09:34:32 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Cure	&Cure::operator=(Cure const &rhs)
 		
 Cure	*Cure::clone(void) const
 {
-	return (new Cure(*this));	
+	return (new Cure());	
 }
 
 void	Cure::use(ICharacter &target)

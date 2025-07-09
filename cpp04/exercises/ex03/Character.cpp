@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 09:37:54 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/07 18:57:05 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/09 09:52:06 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,20 @@
 Character::Character(void): _name("")	// ICharacter doesn't have constructor logic to run so we can't call its constructor
 {
 	for (int i = 0; i < 4; ++i)
+	{
 		_skills[i] = NULL;
+		_trash[i] = NULL;
+	}
 }
 
 Character::~Character()
 {
 	for (int i = 0; i < 4; ++i)
 	{
-		if (_skills[i]) //don't really need to check if (_skills[i]) because delete NULL also works
-			delete _skills[i];
+		delete _skills[i];
+		_skills[i] = NULL;
+		delete _trash[i];
+		_trash[i] = NULL;
 	}
 }
 
@@ -44,6 +49,12 @@ Character	&Character::operator=(Character const &rhs)
 				_skills[i] = rhs._skills[i]->clone();
 			else
 				_skills[i] = NULL;
+				
+			delete _trash[i];
+			if (rhs._trash[i])
+				_trash[i] = rhs._trash[i]->clone();
+			else
+				_trash[i] = NULL;
 		}
 	}
 	return (*this);
@@ -52,7 +63,10 @@ Character	&Character::operator=(Character const &rhs)
 Character::Character(std::string const &name): _name(name)
 {
 	for (int i = 0; i < 4; ++i)
+	{
 		_skills[i] = NULL;
+		_trash[i] = NULL;
+	}
 }
 
 std::string const	&Character::getName() const
@@ -62,11 +76,14 @@ std::string const	&Character::getName() const
 
 void	Character::equip(AMateria *m)
 {
+	if (!m)
+		return ;
 	for (int i = 0; i < 4; ++i)
 	{
 		if (!_skills[i])
 		{
-			_skills[i] = m;
+			_skills[i] = m->clone();
+			delete m;
 			return ;
 		}
 	}
@@ -75,7 +92,10 @@ void	Character::equip(AMateria *m)
 void	Character::unequip(int idx)
 {
 	if (0 <= idx && idx < 4)
+	{
+		_trash[idx] = _skills[idx];
 		_skills[idx] = NULL;
+	}
 }
 
 void	Character::use(int idx, ICharacter &target)

@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 22:59:18 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/07 19:32:32 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/09 09:43:13 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ class Character: public ICharacter
 {
 	private:
 		std::string	_name;
-		AMateria	*_skills[4];	
+		AMateria	*_skills[4];
+		AMateria	*_trash[4];
 	
 	public:
 		Character(void);

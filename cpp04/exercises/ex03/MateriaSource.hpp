@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 14:04:05 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/07 19:36:04 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/09 09:37:51 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <string>
 # include "IMateriaSource.hpp"
+# include "AMateria.hpp"
 
 class MateriaSource: public IMateriaSource
 {	
