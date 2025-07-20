@@ -6,11 +6,12 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 20:08:47 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/20 20:04:15 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/20 22:46:31 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 std::ostream	&operator<<(std::ostream &ostream, Bureaucrat const &b)
 {
@@ -71,10 +72,20 @@ void	Bureaucrat::decrement(void)
 
 const char	*Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Grade Too High Exception!");
+	return ("Bureaucrat: Grade Too High Exception!");
 }
 
 const char	*Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("Grade Too Low Exception!");
+	return ("Bureaucrat: Grade Too Low Exception!");
+}
+
+void	Bureaucrat::signForm(Form f)
+{
+	f.beSigned(*this);
+	if (f.getIsSigned())
+		std::cout << _name << " signed " << f.getName() << std::endl;
+	else
+		std::cout << _name << " couldn't sign " << f.getName()
+					<< " because grade is too low." << std::endl;
 }

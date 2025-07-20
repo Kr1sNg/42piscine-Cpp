@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 19:53:36 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/20 19:25:45 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/20 22:41:38 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <cstdlib>
 # include <time.h>
 # include <stdexcept>
+
+class Form;
 
 class Bureaucrat
 {
@@ -48,6 +50,8 @@ class Bureaucrat
 
 		void	increment(void);
 		void	decrement(void);
+
+		void	signForm(Form f);
 		
 };
 

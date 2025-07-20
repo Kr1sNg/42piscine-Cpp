@@ -6,44 +6,21 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 20:59:35 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/20 20:10:46 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/20 23:00:05 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int	main(void)
 {
 	try
 	{
-		Bureaucrat	bureauA("officeA", 150);
-		Bureaucrat	bureauB("officeB", 2);
+		Bureaucrat	burA("Office A", 10);
+		Form		form1("Form 1", 1, 10);
 		
-		std::cout << bureauA << std::endl;
-		std::cout << bureauB << std::endl;
-		
-		// bureauA.decrement();
-		// std::cout << bureauA << std::endl;
-
-		bureauB.increment();
-		std::cout << bureauB << std::endl;
-		// bureauB.increment();
-		// std::cout << bureauB << std::endl;
-		
-		// Bureaucrat	bureauC("officeC", 560);
-		// std::cout << bureauC << std::endl;
-
-		Bureaucrat	bureauD("", 50);
-		std::cout << bureauD << std::endl;
-
-	}
-	catch (const Bureaucrat::GradeTooHighException &high)
-	{
-		std::cerr << high.what() << std::endl;
-	}
-	catch (const Bureaucrat::GradeTooLowException &low)
-	{
-		std::cerr << low.what() << std::endl;
+		burA.signForm(form1);
 	}
 	catch (const std::exception &e)
 	{
