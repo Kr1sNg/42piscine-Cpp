@@ -6,12 +6,12 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 20:08:47 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/21 00:02:02 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/21 13:01:26 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 std::ostream	&operator<<(std::ostream &ostream, Bureaucrat const &b)
 {
@@ -80,7 +80,7 @@ const char	*Bureaucrat::GradeTooLowException::what() const throw()
 	return ("Bureaucrat: Grade Too Low Exception!");
 }
 
-void	Bureaucrat::signForm(Form &f)
+void	Bureaucrat::signForm(AForm &f)
 {
 	try
 	{
@@ -89,7 +89,20 @@ void	Bureaucrat::signForm(Form &f)
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << _name << " couldn't sign " << f.getName()
+		std::cerr << _name << " couldn't sign " << f.getName()
 					<< " because " << e.what() << std::endl;
 	}
+}
+
+void	Bureaucrat::executeForm(AForm const &form)
+{
+	try
+	{
+		form.execute(*this);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << _name << " could not execute " << form.getName()
+				<< " because " << e.what() << std::endl;
+	}	
 }

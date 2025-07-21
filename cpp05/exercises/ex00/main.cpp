@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 20:59:35 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/20 20:10:46 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/21 17:28:15 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,29 +21,21 @@ int	main(void)
 		
 		std::cout << bureauA << std::endl;
 		std::cout << bureauB << std::endl;
-		
-		// bureauA.decrement();
-		// std::cout << bureauA << std::endl;
-
-		bureauB.increment();
-		std::cout << bureauB << std::endl;
-		// bureauB.increment();
-		// std::cout << bureauB << std::endl;
-		
+	
+		// std::cout << ">>--try to create a Officer with invalid grade--<<" << std::endl;
 		// Bureaucrat	bureauC("officeC", 560);
 		// std::cout << bureauC << std::endl;
+		// Bureaucrat	bureauD("", 50);
+		// std::cout << bureauD << std::endl;
+		
+		// std::cout << ">>--try to increment / decrement grade--<<" << std::endl;
+		// bureauA.decrement(); // 151 => invalid
+		// std::cout << bureauA << std::endl;
+		// bureauB.increment(); // 1
+		// std::cout << bureauB << std::endl;
+		// bureauB.increment(); // 0 => invalid
+		// std::cout << bureauB << std::endl;
 
-		Bureaucrat	bureauD("", 50);
-		std::cout << bureauD << std::endl;
-
-	}
-	catch (const Bureaucrat::GradeTooHighException &high)
-	{
-		std::cerr << high.what() << std::endl;
-	}
-	catch (const Bureaucrat::GradeTooLowException &low)
-	{
-		std::cerr << low.what() << std::endl;
 	}
 	catch (const std::exception &e)
 	{
