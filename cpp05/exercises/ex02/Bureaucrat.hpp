@@ -52,7 +52,7 @@ class Bureaucrat
 		void	decrement(void);
 
 		void	signForm(AForm &f);
-		void	executeForm(AForm const &form);
+		void	executeForm(AForm const &form) const;
 		
 };
 

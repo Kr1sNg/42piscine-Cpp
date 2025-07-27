@@ -31,7 +31,7 @@ class AForm
 	
 	public:
 		AForm(std::string const &n = "DefaultForm", int const &g = 150, int const &e = 150);
-		virtual ~AForm() = 0;
+		virtual ~AForm();
 		AForm(AForm const &src);
 		AForm	&operator=(AForm const &rhs);
 		
