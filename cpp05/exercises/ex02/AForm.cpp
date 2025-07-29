@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 19:58:19 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/21 13:09:34 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/29 12:06:55 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,8 @@
 
 std::ostream	&operator<<(std::ostream &ostream, AForm const &f)
 {
-	std::string s = "";
-	if (f.getIsSigned())
-		s = "is signed.";
-	else
-		s = "is not signed.";
+	std::string s = f.getIsSigned() ? "is signed." : "is not signed.";
+
 	ostream << f.getName() << " form, has required grades to sign is " << f.getSignGrade()
 			<< " and to execute is " << f.getExecGrade() << ", " << s;
 	return ostream;

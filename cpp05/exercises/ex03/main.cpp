@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 20:59:35 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/07/21 17:21:35 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/07/29 12:30:46 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ int	main(void)
 		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 		std::cout << *rrf << std::endl;
 			
-		AForm	*formA = someRandomIntern.makeForm("shrubbery creation", "garden");
-		std::cout << "Form A's name: " << (*formA).getName() << std::endl;
+		AForm	*formS = someRandomIntern.makeForm("shrubbery creation", "garden");
+		std::cout << "Form S's name: " << (*formS).getName() << std::endl;
 			
-		AForm	*formF = someRandomIntern.makeForm("presidential pardon", "country");
-		std::cout << "Form F's name: " << (*formF).getName() << std::endl;	
+		AForm	*formP = someRandomIntern.makeForm("presidential pardon", "country");
+		std::cout << "Form P's name: " << (*formP).getName() << std::endl;	
 		
 		delete	rrf;
-		delete	formA;
-		delete	formF;
+		delete	formS;
+		delete	formP;
 	}
 	catch (const std::exception &e)
 	{
@@ -44,6 +44,8 @@ int	main(void)
 		std::cerr << "Unexpected error" << std::endl;
 	}
 	
+	std::cout << std::endl;
+	// we try to create a form with invalid name => error
 	try
 	{
 		AForm	*formEr = someRandomIntern.makeForm("name", "error");
