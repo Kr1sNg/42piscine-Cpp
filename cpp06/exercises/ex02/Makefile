@@ -6,7 +6,7 @@
 #    By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/26 17:42:09 by tat-nguy          #+#    #+#              #
-#    Updated: 2025/07/31 22:47:31 by tat-nguy         ###   ########.fr        #
+#    Updated: 2025/08/01 00:08:18 by tat-nguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,6 @@ $(NAME):	$(OBJS)
 # Clean
 clean:
 	@$(RM) $(OBJS)
-	@$(RM) *_shrubbery
 	@echo "$(RED) 🗑️  Deleted object files.$(RESET)"
 
 fclean:	clean
