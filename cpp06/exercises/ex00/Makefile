@@ -6,7 +6,7 @@
 #    By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/26 17:42:09 by tat-nguy          #+#    #+#              #
-#    Updated: 2025/07/29 23:36:47 by tat-nguy         ###   ########.fr        #
+#    Updated: 2025/07/30 18:54:13 by tat-nguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,10 +19,10 @@ RESET = \033[0m
 
 # **************************** #
 
-NAME = 
+NAME 		= convert
 
 # Source Files
-SRCS     	= main.cpp 
+SRCS     	= main.cpp ScalarConverter.cpp
 
 # Object Files
 OBJS = $(SRCS:.cpp=.o)
@@ -46,7 +46,6 @@ $(NAME):	$(OBJS)
 # Clean
 clean:
 	@$(RM) $(OBJS)
-	@$(RM) *_shrubbery
 	@echo "$(RED) 🗑️  Deleted object files.$(RESET)"
 
 fclean:	clean

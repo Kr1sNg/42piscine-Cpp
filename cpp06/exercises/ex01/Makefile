@@ -6,7 +6,7 @@
 #    By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/26 17:42:09 by tat-nguy          #+#    #+#              #
-#    Updated: 2025/07/29 23:36:47 by tat-nguy         ###   ########.fr        #
+#    Updated: 2025/07/31 18:42:30 by tat-nguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,10 +19,10 @@ RESET = \033[0m
 
 # **************************** #
 
-NAME = 
+NAME		= serializer
 
 # Source Files
-SRCS     	= main.cpp 
+SRCS     	= main.cpp Serializer.cpp
 
 # Object Files
 OBJS = $(SRCS:.cpp=.o)
