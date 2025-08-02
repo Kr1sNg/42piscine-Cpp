@@ -6,7 +6,7 @@
 #    By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/26 17:42:09 by tat-nguy          #+#    #+#              #
-#    Updated: 2025/08/01 10:38:37 by tat-nguy         ###   ########.fr        #
+#    Updated: 2025/08/02 11:54:32 by tat-nguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,10 +19,10 @@ RESET = \033[0m
 
 # **************************** #
 
-NAME 		= 
+NAME 		= Iter
 
 # Source Files
-SRCS     	= main.cpp 
+SRCS     	= main.cpp test.cpp
 
 # Object Files
 OBJS = $(SRCS:.cpp=.o)
