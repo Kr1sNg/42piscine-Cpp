@@ -27,8 +27,8 @@ class Array
 		Array(Array const &src);
 		Array	&operator=(Array const &rhs);
 
-		T const	&operator[](unsigned int index) const;
-		T		&operator[](unsigned int index);
+		T const	&operator[](unsigned int index) const;  // read-only
+		T		&operator[](unsigned int index);        // modifiable
 		
 		unsigned int	size(void) const;	// const here to guarantees that function does not modify the current instance (*this)
 };
