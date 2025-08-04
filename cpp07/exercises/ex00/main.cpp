@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 00:12:39 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/08/02 18:44:37 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/08/04 13:21:46 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int main(void)
 
 	//-- more test --
 	Test	e(1337);
-	Test f = 42;
+	Test	f = 42;
 	
 	::swap(e, f);
 	std::cout << "e = " << e << ", f = " << f << std::endl;
