@@ -13,6 +13,7 @@
 #include <cstdlib>  // srand(), rand()
 #include <ctime>    // time(NULL)
 #include <iostream>
+#include <string>
 #include "Array.hpp"
 
 /*
@@ -68,12 +69,13 @@ int main(int, char**)
 }
 */
 
-int main() {
+int main(void)
+{
 	std::cout << ">--- Test 00: Empty Array ---<" << std::endl;
 	Array<int> empty;
 	std::cout << "Size: " << empty.size() << std::endl;
 
-	std::cout << ">--- Test 01: Array of 5 random elements ---<" << std::endl;
+	std::cout << "\n>--- Test 01: Array of 5 random int elements ---<" << std::endl;
 	Array<int> arrInt(5);
     srand(time(NULL));
     for (unsigned int i = 0; i < arrInt.size(); ++i)
@@ -84,16 +86,24 @@ int main() {
 	for (unsigned int i = 0; i < arrInt.size(); ++i)
 		std::cout << "Int[" << i << "] = " << arrInt[i] << std::endl;
 
+    std::cout << "\n>--- Test 02: Array of string elements ---<" << std::endl;
+	Array<std::string> arrStr(3);
+    arrStr[0] = "Hello";
+    arrStr[1] = "This is";
+    arrStr[2] = "a string";
+	for (unsigned int i = 0; i < arrStr.size(); ++i)
+		std::cout << "Str[" << i << "] = " << arrStr[i] << std::endl;
+    
     try
     {
-		std::cout << ">--- Test 02: Out of range ---<" << std::endl;
+		std::cout << "\n>--- Test 03: Try Out of range ---<" << std::endl;
 		std::cout << arrInt[42] << std::endl;
 	}
 	catch (const std::exception& e) {
 		std::cerr << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << ">--- Test 03: Value of default initialization ---<" << std::endl;
+	std::cout << "\n>--- Test 04: Value of default initialization ---<" << std::endl;
 	Array<int> numbers(3);
 	for (unsigned int i = 0; i < numbers.size(); ++i)
 		std::cout << "numbers[" << i << "] = " << numbers[i] << std::endl;

@@ -33,17 +33,4 @@ void	iter(Type *array, unsigned int size, void (*func)(Type &))
 	}
 }
 
-/* example functions to test iter() */
-template <typename Type>
-void	display(Type const &x)
-{
-	std::cout << x << std::endl;
-}
-
-template <typename Type>
-void	incrementInt(Type &x)
-{
-	x = x + 1;
-}
-
 #endif
