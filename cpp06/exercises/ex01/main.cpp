@@ -24,7 +24,7 @@ int	main(void)
 				
 	std::cout << "Origin address: " << &origin << std::endl;
 	
-	std::cout << ">--- Data recovering by Serializer ---<" << std::endl;
+	std::cout << "\n>--- Data recovering by Serializer ---<" << std::endl;
 	
 	uintptr_t	u = Serializer::serialize(&origin);
 	Data 		*recover = Serializer::deserialize(u);

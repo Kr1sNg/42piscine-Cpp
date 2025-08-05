@@ -32,13 +32,18 @@ void	identify(Base *p)
 	{
 		B *numb = dynamic_cast<B *>(p);
 		if (!numb)
-			std::cout << "C" << std::endl;
+		{
+			C *numc = dynamic_cast<C *>(p);
+			if (!numc)
+				std::cerr << "Cannot identify this object" << std::endl;
+			else
+				std::cout << "C" << std::endl;
+		}
 		else
 			std::cout << "B" << std::endl;
 	}
 	else
 		std::cout << "A" << std::endl;
-	
 }
 
 void	identify(Base &p)
@@ -59,7 +64,16 @@ void	identify(Base &p)
 		}
 		catch(const std::bad_cast& e)
 		{
-			std::cout << "C" << std::endl;
+			try
+			{
+				C &numc = dynamic_cast<C &>(p);
+				std::cout << "C" << std::endl;
+				(void)numc;
+			}
+			catch(const std::bad_cast& e)
+			{
+				std::cerr << "Exception: " << e.what() << std::endl;
+			}
 		}
 	}
 }
