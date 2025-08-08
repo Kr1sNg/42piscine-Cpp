@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/08 10:01:24 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/08/08 10:37:46 by tat-nguy         ###   ########.fr       */
+/*   Created: 2025/08/08 10:09:30 by tat-nguy          #+#    #+#             */
+/*   Updated: 2025/08/08 10:27:35 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _EASY_
-# define _EASY_
+#include "easyfind.hpp"
+#include <iostream>
 
-# include <cstddef>
-# include <stdexcept>
-
-template <typename T>
-T easyfind(T container, int n)
+int	main(void)
 {
-    for (; container != NULL; ++container)
-        if (*container == n)
-            return (*container);
-    throw std::runtime_error("runtime");
-    return (NULL);
+	int	arr[10];
+	
+	for (int i = 0; i < 10; ++i)
+		arr[i] = i;
+	
+	int	needle = -22;
+	if (easyfind(arr, needle))
+		std::cout << "arr contains " << needle << std::endl;
+	else
+		std::cout << "arr does not contains " << needle << std::endl;
+	
+	return (0);
 }
-
-
-#endif
