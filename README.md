@@ -1,3 +1,4 @@
 # 42piscine - C++ Programming
 
-![piscine42-git](https://github.com/user-attachments/assets/d53911bb-6b81-4074-944a-8887085309d7)
+![piscinecpp](https://github.com/user-attachments/assets/861cb4ff-e22d-4861-aec7-0e32642ea02c)
+
