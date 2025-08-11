@@ -6,7 +6,46 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 08:52:01 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/08/09 08:52:02 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/08/11 21:16:17 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Span.hpp"
+
+int	main(void)
+{
+	// Span sp = Span(5);
+	
+	// sp.addNumber(6);
+	// sp.addNumber(3);
+	// sp.addNumber(17);
+	// sp.addNumber(9);
+	// sp.addNumber(11);
+	
+	// std::cout << sp.shortestSpan() << std::endl;
+	// std::cout << sp.longestSpan() << std::endl;
+	
+	// return 0;
+	
+	Span	a = Span(10);
+	int		arr[5] = {3, 5, 7, 9, 11};
+	
+	try
+	{
+		a.addNumber(-3);
+		a.addNumber(4);
+		a.addNumbers(arr, arr + 5);
+		a.addNumber(42);
+		
+		a.displayArr();
+		
+		std::cout << "shortestSpan: " << a.shortestSpan() << std::endl;
+		std::cout << "longestSpan: " << a.longestSpan() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "Exception: " << e.what() << '\n';
+	}
+
+	return (0);
+}

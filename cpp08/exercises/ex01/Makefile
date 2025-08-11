@@ -6,7 +6,7 @@
 #    By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/26 17:42:09 by tat-nguy          #+#    #+#              #
-#    Updated: 2025/08/09 08:33:18 by tat-nguy         ###   ########.fr        #
+#    Updated: 2025/08/11 21:21:14 by tat-nguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ RESET = \033[0m
 NAME 		= ex01
 
 # Source Files
-SRCS     	= main.cpp 
+SRCS     	= main.cpp Span.cpp
 
 # Object Files
 OBJS = $(SRCS:.cpp=.o)
