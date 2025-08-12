@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 21:24:23 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/08/11 23:40:58 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/08/12 20:08:39 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,25 +35,25 @@ MutantStack<T>	&MutantStack<T>::operator=(MutantStack const &rhs)
 }
 
 template <typename T>
-typename MutantStack<T>::iterator	MutantStack<T>::begin(void)
+typename MutantStack<T>::iteratoR	MutantStack<T>::begin(void)
 {
 	return (std::stack<T>::c.begin());
 }
 
 template <typename T>
-typename MutantStack<T>::const_iterator	MutantStack<T>::begin(void) const
+typename MutantStack<T>::const_iteratoR	MutantStack<T>::begin(void) const
 {
 	return (std::stack<T>::c.begin());
 }
 
 template <typename T>
-typename MutantStack<T>::iterator	MutantStack<T>::end(void)
+typename MutantStack<T>::iteratoR	MutantStack<T>::end(void)
 {
 	return (std::stack<T>::c.end());
 }
 
 template <typename T>
-typename MutantStack<T>::const_iterator	MutantStack<T>::end(void) const
+typename MutantStack<T>::const_iteratoR	MutantStack<T>::end(void) const
 {
 	return (std::stack<T>::c.end());
 }

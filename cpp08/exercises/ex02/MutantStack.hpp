@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 21:23:58 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/08/11 23:40:00 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/08/12 10:39:13 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ class MutantStack: public std::stack<T>
 		MutantStack(MutantStack const &src);
 		MutantStack	&operator=(MutantStack const &rhs);
 		
-		typedef typename std::stack<T>::container_type::iterator		iterator;
-		typedef typename std::stack<T>::container_type::const_iterator	const_iterator;
+		typedef typename std::stack<T>::container_type::iterator		iteratoR;
+		typedef typename std::stack<T>::container_type::const_iterator	const_iteratoR;
 		
-		iterator		begin(void);
-		const_iterator	begin(void) const;
-		iterator		end(void);
-		const_iterator	end(void) const;
+		iteratoR		begin(void);
+		const_iteratoR	begin(void) const;
+		iteratoR		end(void);
+		const_iteratoR	end(void) const;
 		
 };
 
