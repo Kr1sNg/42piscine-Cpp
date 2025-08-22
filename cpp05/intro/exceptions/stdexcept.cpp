@@ -20,7 +20,7 @@ class FloatArr
 	private:
 		double	v[MAX];
 	public:
-		double		&operator[](int i) throw(std::out_of_range);
+		double		&operator[](int i) throw(std::out_of_range); //can only throw exception::out_of_range
 		static int	MaxIndex(void) { return (MAX - 1); }
 };
 

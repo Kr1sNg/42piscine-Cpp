@@ -29,7 +29,7 @@ class Bureaucrat
 		class GradeTooHighException: public std::exception
 		{
 			public:
-				const char	*what() const throw();
+				const char	*what() const throw();  // function promises not to throw any exceptions or "no exception allowed here" => to guarantee the operation of what()
 		};
 		
 		class GradeTooLowException: public std::exception
