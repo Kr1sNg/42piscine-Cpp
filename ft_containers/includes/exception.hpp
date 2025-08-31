@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 10:57:38 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/08/22 12:57:36 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/08/29 18:14:04 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ namespace ft
 	{
 		public:
 			exception(void) throw()	{};	// promise not to throw any exception
+			// cuz it's insane if exception calls another exception
 			exception(exception const &src) throw()	{};
 			exception	&operator=(exception const &rhs) throw()
 			{
@@ -34,7 +35,6 @@ namespace ft
 			{
 				return ("ft::exception");
 			};
-			// it's insane if exception calls another exception
 	};
 	
 	/*-- Out of Range --*/
@@ -45,8 +45,9 @@ namespace ft
 			
 		public:
 			explicit	out_of_range(std::string const &what_arg): s(what_arg)	{};
-			// explicit: tuong minh, have to write clearly throw out_of_range("s")
-			// if not, (throw "s") could be compilered
+			// explicit: tuong minh, have to write clearly `throw out_of_range("s")`
+			// if not, `"s"` could be considered as `out_of_range("s")`
+			// then `throw "s"` could be compilered
 			virtual ~out_of_range() throw()	{};
 			std::string const	what(void) const throw()
 			{
@@ -54,6 +55,7 @@ namespace ft
 			}
 	};
 	
+	/*-- Length Error --*/
 	class length_error: public ft::exception
 	{
 		private:
