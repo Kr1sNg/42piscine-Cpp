@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	_STL_LIKE_
-# define _STL_LIKE_
+#ifndef	_STL_PAIR_
+# define _STL_PAIR_
 
 # include <exception>
 # include <iostream>
