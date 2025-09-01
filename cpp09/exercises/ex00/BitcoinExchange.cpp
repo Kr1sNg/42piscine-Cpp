@@ -50,31 +50,31 @@ void	printMap(std::map<std::string, float> &database)
 // 2001-42-42
 // 2012-01-11 | 2147483648
 
-
-bool	validLine(std::string &line)
+bool	validLine(char const *line)
 {
-	size_t	pipe = line.find('|');
-	
-	std::string	date = line.substr(0, pipe - 1);
-	
-	int	value = atoi(line.substr(pipe + 1).c_str());
-	
+	int		year, month, day;
+	float 	value;
+
+	if (sscanf(line, "%d-%d-%d | %f", &year, &month, &day, &value) != 4)
+	{
+		std::cerr << "Error: bad input => " << line << std::endl;
+		return (false);
+	}
+	if (year < 1900 || month > 12 || month < 1 || day > 31 || day < 1)
+    {
+        std::cout << "Error: bad input => " << line << std::endl;
+        return (false);
+    }
+	if (value < 0.0f)
+	{
+		std::cout << "Error: not a positive number." << std::endl;
+		return (false);
+	}
+	if (value > 1000.0f)
+	{
+		std::cout << "Error: too large a number." << std::endl;
+		return (false);
+	}
+	return (true);
 }
 
-int	readInput(std::string &path)
-{
-	std::ifstream	file(path);
-	std::string		line;
-	
-	if (!file.is_open())
-	{
-		std::cerr << "Error: Could not open file." << std::endl;
-		return (-42);
-	}
-	std::getline(file, line);	//get the first line
-	
-	while (std::getline(file, line))
-	{
-		
-	}
-}

@@ -17,10 +17,11 @@
 #include <iostream>
 #include <string>
 #include <map>
-#include <cstdlib>
+#include <cstdlib>  // atof
+#include <cstdio>   // sscanf
 
 int		loadData(std::map<std::string, float> &database);
 void	printMap(std::map<std::string, float> &database);
-
+bool	validLine(char const *line);
 
 #endif
