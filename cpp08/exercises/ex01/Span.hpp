@@ -46,7 +46,7 @@ class Span
 template <typename Iterator>	// used for any iterator type
 void	Span::addNumbers(Iterator begin, Iterator end)
 {
-	if (_arrInt.size() + std::distance(begin, end) >= _capaMax)
+	if (_arrInt.size() + std::distance(begin, end) > _capaMax)
 		throw (std::out_of_range("Reach the max capacity"));
 	_arrInt.insert(_arrInt.end(), begin, end);
 }

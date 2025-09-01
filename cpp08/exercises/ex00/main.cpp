@@ -13,7 +13,7 @@
 // the difference between iterator and const_iterator are:
 // - iterator: we can read and modify the value it points to, example:
 //	std::list<int>::iterator it = lst.begin();
-//	*it = 99;	//=> allowed
+//	*it = 99;	//=> allowed to modify value
 // - but with std::list<int>::const_iterator ic = lst.begin();
 //	*ic = 99; // => not allowed as the value of elem is const.
 //	however, ++ic; //=> allowed as we're moving the iterator, not modifying the value of elem
@@ -25,7 +25,7 @@
 
 int	main(void)
 {
-	// vector of int
+	// vect of int
 	std::vector<int>	vect;
 	vect.push_back(2);
 	vect.push_back(4);
@@ -46,18 +46,18 @@ int	main(void)
 
 	// list of int
 	int const	arr[] = {2, 4, 42, 1337};
-	std::list<int> const	lst(arr, arr + 4);
+	std::list<int> const	lst(arr, arr + 4);	// init list
 	try
 	{
 		std::list<int>::const_iterator il1 = easyfind(lst, 1337);
-		std::cout << "Const lst: Found " << *il1 << std::endl;
+		std::cout << "Const list: Found " << *il1 << std::endl;
 
 		std::list<int>::const_iterator il2 = easyfind(lst, 43);
-		std::cout << "Const lst: Found " << *il2 << std::endl;
+		std::cout << "Const list: Found " << *il2 << std::endl;
 	}
 	catch (const std::exception& e)
 	{
-		std::cerr << "Const lst: " << e.what() << std::endl;
+		std::cerr << "Const list: " << e.what() << std::endl;
 	}
 	
 	return (0);

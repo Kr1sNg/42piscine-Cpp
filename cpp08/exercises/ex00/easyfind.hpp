@@ -19,7 +19,7 @@
 // iterators, like pointer, are used to access and iterate through elements of data structures
 // by "pointing" them.
 // data structures that support iterators: vector, list, deque, map, set
-// (stacks and queues do not)
+// (stack and queue do not)
 
 template <typename T>
 // using typename here for indicating that a dependent name is a type

@@ -12,15 +12,15 @@
 
 #include "MutantStack.hpp"
 #include <iostream>
+#include <list>
 
 int main()
 {
-	MutantStack<int>	m1;
+	std::cout << ">>-- Test in subject --<<" << std::endl;
+	MutantStack<int>	mstack;
 	
-	m1.push(5);
-	m1.push(17);
-	
-	MutantStack<int>	mstack(m1);
+	mstack.push(5);
+	mstack.push(17);
 	
 	std::cout << mstack.top() << std::endl;
 	
@@ -45,42 +45,36 @@ int main()
 		++it;
 	}
 	std::stack<int> s(mstack);
+
+
+	std::cout << ">>-- replace MutantStack by std::list --<<" << std::endl;
+	std::list<int>	lst;
+	
+	lst.push_back(5);
+	lst.push_back(17);
+	
+	std::cout << lst.back() << std::endl;
+	
+	lst.pop_back();
+	
+	std::cout << lst.size() << std::endl;
+	
+	lst.push_back(3);
+	lst.push_back(5);
+	lst.push_back(737);
+	lst.push_back(0);
+	
+	std::list<int>::iterator it2 = lst.begin();
+	std::list<int>::iterator ite2 = lst.end();
+	
+	++it2;
+	--it2;
+	
+	while (it2 != ite2)
+	{
+		std::cout << *it2 << std::endl;
+		++it2;
+	}
+	std::list<int> s2(lst);
 	return 0;
 }
-
-
-// #include <list>
-// int main()
-// {
-// 	std::list<int>	m1;
-	
-// 	m1.push_back(5);
-// 	m1.push_back(17);
-	
-// 	std::list<int>	mstack(m1);
-	
-// 	std::cout << mstack.back() << std::endl;
-	
-// 	mstack.pop_back();
-	
-// 	std::cout << mstack.size() << std::endl;
-	
-// 	mstack.push_back(3);
-// 	mstack.push_back(5);
-// 	mstack.push_back(737);
-// 	mstack.push_back(0);
-	
-// 	std::list<int>::iterator it = mstack.begin();
-// 	std::list<int>::iterator ite = mstack.end();
-	
-// 	++it;
-// 	--it;
-	
-// 	while (it != ite)
-// 	{
-// 		std::cout << *it << std::endl;
-// 		++it;
-// 	}
-// 	std::list<int> s(mstack);
-// 	return 0;
-// }

@@ -37,7 +37,7 @@ Span	&Span::operator=(Span const &rhs)
 		
 void	Span::addNumber(int value)
 {
-	if (_arrInt.size() >= _capaMax)
+	if (_arrInt.size() > _capaMax)
 		throw (std::out_of_range("Reach the max capacity"));
 	_arrInt.push_back(value);
 }
