@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 15:04:55 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/09/03 19:29:38 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/09/03 23:16:10 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,10 @@ float RPN::calculate(char *av)
 		throw std::invalid_argument("Error");
 	}
 	
-	std::istringstream	iss(expr);
+	std::istringstream	iss(expr);	// it treats expr as an input stream
 	std::string			token;
 	
-	while (iss >> token)
+	while (iss >> token)	// op >> reads iss into token by separating at ' ', '\t', '\n' until '\0'
 	{
 		if (token.size() < 2 && (token == "+" || token == "-" || token == "*" || token == "/"))
 		{

@@ -6,11 +6,11 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 19:33:27 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/09/03 19:35:33 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/09/04 13:17:00 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// stack
+// stack - LIFO
 
 #include "RPN.hpp"
 
@@ -18,7 +18,7 @@ int	main(int ac, char *av[])
 {
 	if (ac != 2)
 	{
-		std::cout << "Usage: RPN \"operand operand operator ...\"" << std::endl;
+		std::cerr << "Usage: RPN \"operand operand operator ...\"" << std::endl;
 		return (-42);
 	}
 	

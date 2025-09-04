@@ -108,7 +108,7 @@ stack: [14]
 Final result = `14`
 
 
-# Ford-Johnson algorithm - Merge-Insert Sort Algorithm
+# Ford-Johnson algorithm - Merge-Insertion Sort Algorithm
 
 Let’s sort this example array:
 
@@ -116,42 +116,73 @@ Let’s sort this example array:
 [7, 2, 5, 3, 1, 6, 4]
 ```
 
-## Step 1 — Split into small groups
+## Step 1 — Split into pairs and sort internally the pair
 
-We divide the array into small groups (usually 5 elements each or fewer).
-
-```
-Group 1: [7, 2, 5, 3, 1]
-Group 2: [6, 4]
-```
-
-## Step 2 — Sort each group using Insertion Sort 🧩
-
-Insertion Sort is very fast for small groups.
-
-- Sort [7, 2, 5, 3, 1] → becomes [1, 2, 3, 5, 7]
-- Sort [6, 4] → becomes [4, 6]
-
-Now we have:
+Make pairwise comparisons of `[n/2]` disjoint pairs (if n is odd, leave one element out)
 
 ```
-Group 1: [1, 2, 3, 5, 7]
-Group 2: [4, 6]
+Pairs: [7, 2], [5, 3], [1, 6], 4
+=> After comparions: [2, 7], [3, 5], [1, 6], 4
 ```
 
-## Step 3 — Merge groups using Merge Sort 🔄
+## Step 2 — Sort pairs based on their larger number 🧩
 
-Now we merge these sorted groups efficiently:
-First merge:
+Recursively sort the `[n/2]` larger elements from each pair.
+Creating a sort chain S of `[n/2]` elements, in ascending order, using merge-insertion sort.
 
 ```
-[1, 2, 3, 5, 7] + [4, 6]
+Chain S of larger elem: [7, 5, 6]
+=> Sorts S: 
+1. [7, 5], 6
+2. [7, 5], 6
+3. 5-> 7 , 6
+4. 5 ->6-> 7
+5. Sorted S: 5 -> 6 -> 7
+
+Sorted Pairs: [3, 5], [1, 6], [2, 7], 4
 ```
 
-Compare first elements → take the smaller one each time:
+## Step 3 — Insert first element in to chain 🔄
+
+Insert at the start of chain S the element that was paired with the first (smallest) element of S
+
+```
+Pairs: 	[3, 5], [1, 6], [2, 7], 4
+Chain S: 5 -> 6 -> 7
+
+Pairs:			[1, 6], [2, 7], 4
+Insert : 3-> 5 -> 6 -> 7
+```
+
+## Step 4 - Insert the remain
+
+Insert the remaining `[n/2]-1` elements of array into chain S, one at a time, using binary search insertion.
+```
+Pairs:		[1, 6], [2, 7], 4
+Chain S:	3 -> 5 -> 6 -> 7
+```
+
+At this point, compare `1` with `3`, `5` (because `1` is paired with `6` so we already knew it's smaller than `6`), then insert `1` into chain S:
+
+```
+Pairs:		[2, 7], 4
+Chain S: 	1-> 3 -> 5 -> 6 -> 7
+```
+
+Then continue comparing and insert `2` and `4` into chain S
+
+```
+Pairs:		4
+Chain S: 	1 ->2-> 3 -> 5 -> 6 -> 7
+
+Pairs:
+Chain S:	1 -> 2 -> 3 ->4-> 5 -> 6 -> 7
+```
+
+## Step 5: ✅ Final sorted array
 
 ```
 [1, 2, 3, 4, 5, 6, 7]
 ```
 
-✅ Final sorted array.
+
