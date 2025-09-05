@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 19:33:27 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/09/04 13:17:00 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/09/05 13:11:38 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,13 @@
 
 int	main(int ac, char *av[])
 {
-	if (ac != 2)
-	{
-		std::cerr << "Usage: RPN \"operand operand operator ...\"" << std::endl;
-		return (-42);
-	}
-	
 	try
 	{
+		if (ac != 2)
+			throw std::length_error("Usage: RPN \"operand operand operator ...\"");
+	
 		RPN	rpn;
+		
 		std::cout << rpn.calculate(av[1]) << std::endl;
 	}
 	catch (const std::exception &e)

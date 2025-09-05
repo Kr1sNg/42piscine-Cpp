@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 19:19:12 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/09/03 18:16:08 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/09/05 13:09:26 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,13 @@
 
 int	main(int ac, char *av[])
 {
-	if (ac < 2)
-	{
-		std::cerr << "Error: Could not open file." << std::endl;
-		return (-42);
-	}
-	else if (ac > 2)
-	{
-		std::cerr << "Error: Too many files." << std::endl;
-		return (-42);
-	}
-
 	try
 	{
+		if (ac < 2)
+			throw std::invalid_argument("Error: Could not open file.");
+		else if (ac > 2)
+			throw std::length_error("Error: Too many files.");
+
 		BitcoinExchange	bitcoin;
 		
 		bitcoin.loadDatabase("data.csv");

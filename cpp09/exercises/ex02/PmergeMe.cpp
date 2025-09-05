@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 15:05:43 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/09/04 22:38:08 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/09/05 11:35:25 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	PmergeMe::binaryInsert(Container &sorted, typename Container::value_type n)
 	typename Container::iterator	pos;
 	
 	pos = std::lower_bound(sorted.begin(), sorted.end(), n);	//first element >= n
-	if (*pos == n)
+	if (pos != sorted.end() && *pos == n)
 		throw std::invalid_argument("Error: Duplicate numbers");
 	sorted.insert(pos, n);
 }

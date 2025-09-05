@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 20:21:24 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/09/04 22:30:25 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/09/05 11:42:09 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 /* Test:
 For linux:
-`shuf -i 1-1000 -n 3000 | tr "\n" " " `
+`shuf -i 1-100000 -n 3000 | tr "\n" " " `
 For OSX:
-`jot -r 3000 1 1000 | tr '\n' ' '`
+`jot -r 3000 1 100000 | tr '\n' ' '`
 */
 
 #include "PmergeMe.hpp"
@@ -34,30 +34,23 @@ bool	isDigit(char *av)
 
 int	main(int ac, char *av[])
 {
-	if (ac < 2)
-	{
-		std::cerr << "Usage: ./PmergeMe <list of positive intergers>" << std::endl;
-		return (-42);
-	}
+	try {
+		if (ac < 2)
+			throw std::invalid_argument("Usage: ./PmergeMe <list of different positive intergers>");
 
-	std::vector<int>	vec;
-	std::deque<int>		deq;
-	
-	for (int i = 1; i < ac; ++i)
-	{
-		int	n;
-		std::istringstream	iss(av[i]);
-		if (!(iss >> n) || n < 0 || n > INT_MAX || !isDigit(av[i]))
+		std::vector<int>	vec;
+		std::deque<int>		deq;
+		
+		for (int i = 1; i < ac; ++i)
 		{
-			std::cerr << "Error" << std::endl;
-			return (-42);
+			int	n;
+			std::istringstream	iss(av[i]);
+			if (!(iss >> n) || n < 0 || n > INT_MAX || !isDigit(av[i]))
+				throw std::invalid_argument("Error");
+			vec.push_back(n);
+			deq.push_back(n);
 		}
-		vec.push_back(n);
-		deq.push_back(n);
-	}
 	
-	try
-	{
 		PmergeMe	sorter;
 		
 		std::cout << "Before: ";
@@ -91,7 +84,7 @@ int	main(int ac, char *av[])
 	}
 	catch (...)
 	{
-		std::cerr << "Unexpected Error" << std::endl;
+		std::cerr << "Error: Unexpected Error" << std::endl;
 	}
 		
 	return (0); 

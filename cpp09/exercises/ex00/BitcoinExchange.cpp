@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 10:13:04 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/09/03 19:52:22 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/09/05 12:47:22 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,17 @@ BitcoinExchange::BitcoinExchange(void)
 
 BitcoinExchange::~BitcoinExchange()
 {
+}
+
+BitcoinExchange::BitcoinExchange(BitcoinExchange const &src)
+{
+	(void)src;
+}
+
+BitcoinExchange	&BitcoinExchange::operator=(BitcoinExchange const &rhs)
+{
+	(void)rhs;
+	return (*this);
 }
 
 bool	BitcoinExchange::isLeapYear(int year)
